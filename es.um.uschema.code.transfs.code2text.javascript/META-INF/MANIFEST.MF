@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Transf
+Bundle-SymbolicName: es.um.uschema.code.transfs.code2text.javascript
+Bundle-Version: 1.0.0.qualifier
+Export-Package: es.um.nosql.code.s13e.transfs.code2text.javascript.transf,
+ es.um.nosql.code.s13e.transfs.code2text.javascript.transf.statements
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.xmi,
+ com.google.guava,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtend.lib,
+ org.eclipse.xtend.lib.macro,
+ es.um.uschema.code.metamodels.code
+Automatic-Module-Name: es.um.nosql.code.s13e.transfs.code2text.transf
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

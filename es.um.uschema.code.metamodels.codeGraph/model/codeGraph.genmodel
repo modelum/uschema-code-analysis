@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/es.um.nosql.code.s13e.metamodels.codeGraph/src"
+    modelPluginID="es.um.nosql.code.s13e.metamodels.codeGraph" modelName="CodeGraph"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" usedGenPackages="../../es.um.nosql.code.s13e.metamodels.code/model/code.genmodel#//code"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>codeGraph.ecore</foreignModel>
+  <genPackages prefix="CodeGraph" basePackage="es.um.nosql.code.s13e.metamodels" disposableProviderFactory="true"
+      ecorePackage="codeGraph.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="codeGraph.ecore#//EdgeType">
+      <genEnumLiterals ecoreEnumLiteral="codeGraph.ecore#//EdgeType/CALL"/>
+      <genEnumLiterals ecoreEnumLiteral="codeGraph.ecore#//EdgeType/LOOP"/>
+      <genEnumLiterals ecoreEnumLiteral="codeGraph.ecore#//EdgeType/SELECTION"/>
+      <genEnumLiterals ecoreEnumLiteral="codeGraph.ecore#//EdgeType/TRY"/>
+      <genEnumLiterals ecoreEnumLiteral="codeGraph.ecore#//EdgeType/CATCH"/>
+      <genEnumLiterals ecoreEnumLiteral="codeGraph.ecore#//EdgeType/JUMP"/>
+      <genEnumLiterals ecoreEnumLiteral="codeGraph.ecore#//EdgeType/RETURN"/>
+      <genEnumLiterals ecoreEnumLiteral="codeGraph.ecore#//EdgeType/NEXT"/>
+      <genEnumLiterals ecoreEnumLiteral="codeGraph.ecore#//EdgeType/EXPRESSION"/>
+      <genEnumLiterals ecoreEnumLiteral="codeGraph.ecore#//EdgeType/FINALLY"/>
+      <genEnumLiterals ecoreEnumLiteral="codeGraph.ecore#//EdgeType/ELSE"/>
+      <genEnumLiterals ecoreEnumLiteral="codeGraph.ecore#//EdgeType/ARGUMENT"/>
+      <genEnumLiterals ecoreEnumLiteral="codeGraph.ecore#//EdgeType/PARAMETER"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="codeGraph.ecore#//NodeType">
+      <genEnumLiterals ecoreEnumLiteral="codeGraph.ecore#//NodeType/StartNode"/>
+      <genEnumLiterals ecoreEnumLiteral="codeGraph.ecore#//NodeType/EndNode"/>
+      <genEnumLiterals ecoreEnumLiteral="codeGraph.ecore#//NodeType/StatementNode"/>
+      <genEnumLiterals ecoreEnumLiteral="codeGraph.ecore#//NodeType/ControlNode"/>
+      <genEnumLiterals ecoreEnumLiteral="codeGraph.ecore#//NodeType/Parameter"/>
+      <genEnumLiterals ecoreEnumLiteral="codeGraph.ecore#//NodeType/Argument"/>
+    </genEnums>
+    <genClasses ecoreClass="codeGraph.ecore#//CallableBlockSubGraph">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference codeGraph.ecore#//CallableBlockSubGraph/callableBlock"/>
+    </genClasses>
+    <genClasses ecoreClass="codeGraph.ecore#//Node">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference codeGraph.ecore#//Node/outgoingEdges"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference codeGraph.ecore#//Node/statement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute codeGraph.ecore#//Node/nodeType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference codeGraph.ecore#//Node/incomingEdges"/>
+    </genClasses>
+    <genClasses ecoreClass="codeGraph.ecore#//Edge">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute codeGraph.ecore#//Edge/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference codeGraph.ecore#//Edge/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference codeGraph.ecore#//Edge/source"/>
+    </genClasses>
+    <genClasses ecoreClass="codeGraph.ecore#//CodeGraph">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference codeGraph.ecore#//CodeGraph/code"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference codeGraph.ecore#//CodeGraph/subGrahps"/>
+    </genClasses>
+    <genClasses ecoreClass="codeGraph.ecore#//EdgeCall">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference codeGraph.ecore#//EdgeCall/call"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="codeGraph.ecore#//GraphPart">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference codeGraph.ecore#//GraphPart/variables"/>
+    </genClasses>
+    <genClasses ecoreClass="codeGraph.ecore#//ExpressionEdge">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference codeGraph.ecore#//ExpressionEdge/expression"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="codeGraph.ecore#//CodeSubGraph">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference codeGraph.ecore#//CodeSubGraph/nodes"/>
+    </genClasses>
+    <genClasses ecoreClass="codeGraph.ecore#//CodeBlockSubGraph">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference codeGraph.ecore#//CodeBlockSubGraph/codeBlock"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

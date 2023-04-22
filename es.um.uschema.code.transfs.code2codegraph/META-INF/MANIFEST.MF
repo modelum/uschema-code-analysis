@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Transf
+Bundle-SymbolicName: es.um.uschema.code.transfs.code2codegraph
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.emf.ecore,
+ es.um.uschema.code.metamodels.code,
+ org.eclipse.emf.ecore.xmi
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: es.um.nosql.code.s13e.transfs.code2flow.transf
+Import-Package: es.um.nosql.code.s13e.metamodels.codeGraph,
+ es.um.nosql.code.s13e.metamodels.codeGraph.utils,
+ es.um.nosql.code.s13e.transfs.code2text.javascript.transf
+Export-Package: es.um.nosql.code.s13e.transfs.code2codegraph.transf

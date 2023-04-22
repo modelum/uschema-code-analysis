@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Duplication
+Bundle-SymbolicName: es.um.uschema.code.transfs.dboschema2uschema
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Automatic-Module-Name: es.um.nosql.code.s13e.apps.duplication
+Require-Bundle: es.um.uschema;bundle-version="1.0.0",
+ es.um.uschema.utils;bundle-version="1.0.0",
+ es.um.uschema.code.metamodels.databaseOperationsSchema
+Export-Package: es.um.nosql.code.s13e.transfs.dboschema2unosqlschema.transf

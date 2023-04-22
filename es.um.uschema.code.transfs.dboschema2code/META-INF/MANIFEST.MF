@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Transf
+Bundle-SymbolicName: es.um.uschema.code.transfs.dboschema2code
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: es.um.nosql.code.s13e.transfs.dboschema2code.transf
+Import-Package: es.um.nosql.code.s13e.metamodels.code,
+ es.um.nosql.code.s13e.metamodels.code.utils,
+ es.um.nosql.code.s13e.metamodels.databaseOperationsSchema,
+ es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.utils,
+ es.um.nosql.code.s13e.transfs.code2text.javascript.transf
+Require-Bundle: org.eclipse.emf.common,
+ org.eclipse.emf.ecore
+Export-Package: es.um.nosql.code.s13e.transfs.dboschema2code.transf

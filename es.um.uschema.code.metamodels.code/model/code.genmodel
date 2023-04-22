@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/es.um.nosql.code.s13e.metamodels.code/src" modelPluginID="es.um.nosql.code.s13e.metamodels.code"
+    modelName="Code" modelPluginClass="" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>code.ecore</foreignModel>
+  <genPackages prefix="Code" basePackage="es.um.nosql.code.s13e.metamodels" disposableProviderFactory="true"
+      ecorePackage="code.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="code.ecore#//OperationType">
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//OperationType/PLUS"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//OperationType/SUBTRACT"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//OperationType/DIVIDE"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//OperationType/MULTIPLY"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//OperationType/MODULUS"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//OperationType/LOGICAL_OR"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//OperationType/LOGICAL_AND"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="code.ecore#//LoopType">
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//LoopType/WHILE"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//LoopType/DO_WHILE"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//LoopType/FOR"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//LoopType/FOR_EACH"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="code.ecore#//ContainerType">
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//ContainerType/FILE"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//ContainerType/PACKAGE"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//ContainerType/NAMESPACE"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//ContainerType/FOLDER"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="code.ecore#//CodeContainerType">
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//CodeContainerType/CLASS"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//CodeContainerType/FUNCTION_COLLECTION"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//CodeContainerType/SCRIPT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="code.ecore#//ExpressionType">
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//ExpressionType/AND"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//ExpressionType/OR"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//ExpressionType/LESS"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//ExpressionType/LESS__OR_EQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//ExpressionType/EQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//ExpressionType/NOT_EQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//ExpressionType/GREATER_OR_EQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//ExpressionType/GREATER"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//ExpressionType/NOT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="code.ecore#//CaseType">
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//CaseType/IF"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//CaseType/ELSE_IF"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//CaseType/ELSE"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//CaseType/CASE"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//CaseType/DEFAULT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="code.ecore#//SelectionType">
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//SelectionType/IF"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//SelectionType/SWITCH"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="code.ecore#//CodeBlockType">
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//CodeBlockType/FUNCTION"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//CodeBlockType/CASE_BLOCK"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//CodeBlockType/LOOP_BLOCK"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//CodeBlockType/METHOD"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//CodeBlockType/INLINE_CODE"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//CodeBlockType/LAMBDA"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//CodeBlockType/CONSTRUCTOR"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="code.ecore#//LoopPartType">
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//LoopPartType/CONDITION"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//LoopPartType/INITIALIZATION"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//LoopPartType/UPDATER"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="code.ecore#//UnaryOperationType">
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//UnaryOperationType/PRE_PLUSPLUS"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//UnaryOperationType/PRE_MINUSMINUS"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//UnaryOperationType/POST_PLUSPLUS"/>
+      <genEnumLiterals ecoreEnumLiteral="code.ecore#//UnaryOperationType/POST_MINUSMINUS"/>
+    </genEnums>
+    <genClasses ecoreClass="code.ecore#//Code">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute code.ecore#//Code/language"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//Code/container"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//Code/types"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//Code/exception"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//Code/globalVariable"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//Container">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute code.ecore#//Container/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//Container/codeContainer"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//Container/subContainer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute code.ecore#//Container/name"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//CodeContainer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute code.ecore#//CodeContainer/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute code.ecore#//CodeContainer/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//CodeContainer/codeBlock"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//CodeContainer/dataContainer"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//CodeContainer/variable"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//Property">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//Property/Initialization"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference code.ecore#//Property/dataContainer"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//Type"/>
+    <genClasses ecoreClass="code.ecore#//PrimitiveType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute code.ecore#//PrimitiveType/type"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//Statement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//Statement/start"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//Statement/end"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//Expression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute code.ecore#//Expression/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//Expression/conditionalExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//Operation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute code.ecore#//Operation/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//Operation/dataProducers"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//Loop">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute code.ecore#//Loop/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//Loop/codeBlock"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//Loop/loopPart"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//Selection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute code.ecore#//Selection/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//Selection/case"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//CodeBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//CodeBlock/statements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute code.ecore#//CodeBlock/codeBlockType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//CodeBlock/variables"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference code.ecore#//CodeBlock/returnType"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//Case">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute code.ecore#//Case/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//Case/codeBlock"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//Case/conditionalExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//Variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute code.ecore#//Variable/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference code.ecore#//Variable/type"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//LoopPart">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//LoopPart/statement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute code.ecore#//LoopPart/type"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//Parameter">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference code.ecore#//Parameter/callableBlock"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//DataContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//DataContainer/properties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//DataContainer/parent"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//DataProducer"/>
+    <genClasses ecoreClass="code.ecore#//CallableBlock">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference code.ecore#//CallableBlock/parameters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute code.ecore#//CallableBlock/functionName"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//Exception">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute code.ecore#//Exception/exceptionName"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//Return">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//Return/dataProducers"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//Throw">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference code.ecore#//Throw/exception"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//Throw/dataProducer"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//NewDataContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//NewDataContainer/dataContainer"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//Assign">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//Assign/outputs"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference code.ecore#//Assign/variable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//Assign/inputs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute code.ecore#//Assign/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute code.ecore#//Assign/name"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//Assignable"/>
+    <genClasses ecoreClass="code.ecore#//Constant"/>
+    <genClasses ecoreClass="code.ecore#//IndexBasedAccess">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference code.ecore#//IndexBasedAccess/variable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//IndexBasedAccess/index"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//IndexBasedAccess/dataProducer"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//VariableDeclaration">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference code.ecore#//VariableDeclaration/variable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//VariableDeclaration/initialization"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute code.ecore#//VariableDeclaration/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute code.ecore#//VariableDeclaration/kind"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//Literal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute code.ecore#//Literal/literal"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference code.ecore#//Literal/type"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//UnaryOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute code.ecore#//UnaryOperation/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference code.ecore#//UnaryOperation/variable"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//VariableAccess">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference code.ecore#//VariableAccess/variable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute code.ecore#//VariableAccess/name"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//ConditionalExpression"/>
+    <genClasses ecoreClass="code.ecore#//Try">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//Try/catchs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//Try/codeBlock"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//Try/finally"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//Catch">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference code.ecore#//Catch/exception"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//Catch/codeBlock"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//Catch/dataProducer"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//Call">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference code.ecore#//Call/callableBlock"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//Call/arguments"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute code.ecore#//Call/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//Call/dataProducer"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//Argument">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//Argument/dataProducer"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference code.ecore#//Argument/parameter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute code.ecore#//Argument/name"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//PropertyAccess">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference code.ecore#//PropertyAccess/property"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute code.ecore#//PropertyAccess/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//PropertyAccess/nextAccess"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//PropertyAccess/dataProducer"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//PropertyAssign">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference code.ecore#//PropertyAssign/property"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//Break"/>
+    <genClasses ecoreClass="code.ecore#//NewArray">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//NewArray/dataProducer"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//NewClass">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//NewClass/arguments"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference code.ecore#//NewClass/codeContainer"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference code.ecore#//NewClass/callableBlock"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//This">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference code.ecore#//This/dataContainer"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//UnaryExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute code.ecore#//UnaryExpression/operator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//UnaryExpression/dataProducer"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//Finally">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference code.ecore#//Finally/codeBlock"/>
+    </genClasses>
+    <genClasses ecoreClass="code.ecore#//CodeLocation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute code.ecore#//CodeLocation/line"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute code.ecore#//CodeLocation/column"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

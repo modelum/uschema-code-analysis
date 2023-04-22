@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:code="http://es.um.nosql.code.s13e.metamodels/code" xmlns:codeGraph="http://es.um.nosql.code.s13e.metamodels/codeGraph" xmlns:databaseOperationsSchema="http://es.um.nosql.code.s13e.metamodels/dboSchema">
+  <code:Code language="JavaScript">
+    <container type="FOLDER" name="json">
+      <subContainer name="example.json">
+        <codeContainer type="SCRIPT">
+          <codeBlock codeBlockType="INLINE_CODE">
+            <statements xsi:type="code:VariableDeclaration" variable="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.0" name="MongoClient" kind="const">
+              <start line="1" column="6"/>
+              <end line="1" column="50"/>
+              <initialization xsi:type="code:PropertyAccess" name="MongoClient">
+                <dataProducer xsi:type="code:Call" name="require">
+                  <start line="1" column="20"/>
+                  <end line="1" column="38"/>
+                  <arguments>
+                    <dataProducers xsi:type="code:Literal" literal="'mongodb'" type="/0/@types.0">
+                      <start line="1" column="28"/>
+                      <end line="1" column="37"/>
+                    </dataProducers>
+                  </arguments>
+                  <dataProducer xsi:type="code:VariableAccess" variable="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.1" name="require">
+                    <start line="1" column="20"/>
+                    <end line="1" column="27"/>
+                  </dataProducer>
+                </dataProducer>
+              </initialization>
+            </statements>
+            <statements xsi:type="code:VariableDeclaration" variable="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.2" name="url" kind="const">
+              <start line="3" column="6"/>
+              <end line="3" column="39"/>
+              <initialization xsi:type="code:Literal" literal="'mongodb://localhost:27017'" type="/0/@types.0">
+                <start line="3" column="12"/>
+                <end line="3" column="39"/>
+              </initialization>
+            </statements>
+            <statements xsi:type="code:VariableDeclaration" variable="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.3" name="dbName" kind="const">
+              <start line="4" column="6"/>
+              <end line="4" column="21"/>
+              <initialization xsi:type="code:Literal" literal="'mydb'" type="/0/@types.0">
+                <start line="4" column="15"/>
+                <end line="4" column="21"/>
+              </initialization>
+            </statements>
+            <statements xsi:type="code:VariableDeclaration" variable="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.4" name="client" kind="const">
+              <start line="6" column="6"/>
+              <end line="8" column="2"/>
+              <initialization xsi:type="code:NewClass" codeContainer="/0/@types.1">
+                <start line="6" column="15"/>
+                <end line="8" column="2"/>
+                <arguments name="url">
+                  <dataProducers xsi:type="code:VariableAccess" variable="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.2" name="url">
+                    <start line="6" column="31"/>
+                    <end line="6" column="34"/>
+                  </dataProducers>
+                </arguments>
+                <arguments>
+                  <dataProducers xsi:type="code:NewDataContainer">
+                    <start line="6" column="36"/>
+                    <end line="8" column="1"/>
+                    <dataContainer name="useNewUrlParser">
+                      <properties name="useNewUrlParser" type="/0/@types.2" dataContainer="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.3/@initialization/@arguments.1/@dataProducers.0/@dataContainer">
+                        <Initialization xsi:type="code:Literal" literal="true" type="/0/@types.2">
+                          <start line="7" column="18"/>
+                          <end line="7" column="22"/>
+                        </Initialization>
+                      </properties>
+                    </dataContainer>
+                  </dataProducers>
+                </arguments>
+              </initialization>
+            </statements>
+            <statements xsi:type="code:Call" name="connect">
+              <start line="10"/>
+              <end line="44" column="2"/>
+              <arguments>
+                <dataProducers xsi:type="code:CallableBlock" parameters="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@variables.0 /0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@variables.1">
+                  <statements xsi:type="code:Call" name="log">
+                    <start line="12" column="1"/>
+                    <end line="12" column="45"/>
+                    <arguments>
+                      <dataProducers xsi:type="code:Literal" literal="&quot;Connected correctly to server&quot;" type="/0/@types.4">
+                        <start line="12" column="13"/>
+                        <end line="12" column="44"/>
+                      </dataProducers>
+                    </arguments>
+                    <dataProducer xsi:type="code:PropertyAccess" property="/0/@types.3/@properties.0" name="log">
+                      <dataProducer xsi:type="code:VariableAccess" variable="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.5" name="console">
+                        <start line="12" column="1"/>
+                        <end line="12" column="8"/>
+                      </dataProducer>
+                    </dataProducer>
+                  </statements>
+                  <statements xsi:type="code:VariableDeclaration" variable="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.6" name="db" kind="const">
+                    <start line="13" column="7"/>
+                    <end line="13" column="29"/>
+                    <initialization xsi:type="code:Call" name="db">
+                      <start line="13" column="12"/>
+                      <end line="13" column="29"/>
+                      <arguments name="dbName">
+                        <dataProducers xsi:type="code:VariableAccess" variable="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.3" name="dbName">
+                          <start line="13" column="22"/>
+                          <end line="13" column="28"/>
+                        </dataProducers>
+                      </arguments>
+                      <dataProducer xsi:type="code:PropertyAccess" property="/0/@types.1/@dataContainer/@properties.1" name="db">
+                        <dataProducer xsi:type="code:VariableAccess" variable="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.4" name="client">
+                          <start line="13" column="12"/>
+                          <end line="13" column="18"/>
+                        </dataProducer>
+                      </dataProducer>
+                    </initialization>
+                  </statements>
+                  <statements xsi:type="code:Call" name="findOne">
+                    <start line="14" column="1"/>
+                    <end line="23" column="2"/>
+                    <arguments>
+                      <dataProducers xsi:type="code:NewDataContainer">
+                        <start line="14" column="32"/>
+                        <end line="14" column="50"/>
+                        <dataContainer name="title">
+                          <properties name="title" type="/0/@types.4" dataContainer="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.0/@dataProducers.0/@dataContainer">
+                            <Initialization xsi:type="code:Literal" literal="&quot;title&quot;" type="/0/@types.4">
+                              <start line="14" column="41"/>
+                              <end line="14" column="48"/>
+                            </Initialization>
+                          </properties>
+                        </dataContainer>
+                      </dataProducers>
+                    </arguments>
+                    <arguments>
+                      <dataProducers xsi:type="code:CallableBlock" parameters="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0/@variables.0 /0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0/@variables.1">
+                        <statements xsi:type="code:Call" name="findOne">
+                          <start line="16" column="3"/>
+                          <end line="20" column="4"/>
+                          <arguments>
+                            <dataProducers xsi:type="code:NewDataContainer">
+                              <start line="16" column="35"/>
+                              <end line="16" column="60"/>
+                              <dataContainer name="idCard">
+                                <properties name="idCard" dataContainer="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0/@statements.0/@arguments.0/@dataProducers.0/@dataContainer">
+                                  <Initialization xsi:type="code:PropertyAccess" property="/0/@types.6/@properties.0" name="director">
+                                    <dataProducer xsi:type="code:VariableAccess" variable="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.7" name="film">
+                                      <start line="16" column="45"/>
+                                      <end line="16" column="49"/>
+                                    </dataProducer>
+                                  </Initialization>
+                                </properties>
+                              </dataContainer>
+                            </dataProducers>
+                          </arguments>
+                          <arguments>
+                            <dataProducers xsi:type="code:CallableBlock" parameters="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0/@statements.0/@arguments.1/@dataProducers.0/@variables.0 /0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0/@statements.0/@arguments.1/@dataProducers.0/@variables.1">
+                              <statements xsi:type="code:Call" name="log">
+                                <start line="18" column="5"/>
+                                <end line="18" column="87"/>
+                                <arguments>
+                                  <dataProducers xsi:type="code:Operation" type="+">
+                                    <start line="18" column="17"/>
+                                    <end line="18" column="86"/>
+                                    <dataProducers xsi:type="code:Operation" type="+">
+                                      <start line="18" column="17"/>
+                                      <end line="18" column="74"/>
+                                      <dataProducers xsi:type="code:Operation" type="+">
+                                        <start line="18" column="17"/>
+                                        <end line="18" column="66"/>
+                                        <dataProducers xsi:type="code:Operation" type="+">
+                                          <start line="18" column="17"/>
+                                          <end line="18" column="53"/>
+                                          <dataProducers xsi:type="code:Operation" type="+">
+                                            <start line="18" column="17"/>
+                                            <end line="18" column="45"/>
+                                            <dataProducers xsi:type="code:PropertyAccess" property="/0/@types.7/@properties.0" name="name">
+                                              <dataProducer xsi:type="code:VariableAccess" variable="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.8" name="person">
+                                                <start line="18" column="17"/>
+                                                <end line="18" column="23"/>
+                                              </dataProducer>
+                                            </dataProducers>
+                                            <dataProducers xsi:type="code:PropertyAccess" property="/0/@types.7/@properties.1" name="surname">
+                                              <dataProducer xsi:type="code:VariableAccess" variable="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.8" name="person">
+                                                <start line="18" column="31"/>
+                                                <end line="18" column="37"/>
+                                              </dataProducer>
+                                            </dataProducers>
+                                          </dataProducers>
+                                          <dataProducers xsi:type="code:Literal" literal="&quot; : &quot;" type="/0/@types.4">
+                                            <start line="18" column="48"/>
+                                            <end line="18" column="53"/>
+                                          </dataProducers>
+                                        </dataProducers>
+                                        <dataProducers xsi:type="code:PropertyAccess" property="/0/@types.6/@properties.1" name="title">
+                                          <dataProducer xsi:type="code:VariableAccess" variable="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.7" name="film">
+                                            <start line="18" column="56"/>
+                                            <end line="18" column="60"/>
+                                          </dataProducer>
+                                        </dataProducers>
+                                      </dataProducers>
+                                      <dataProducers xsi:type="code:Literal" literal="&quot; : &quot;" type="/0/@types.4">
+                                        <start line="18" column="69"/>
+                                        <end line="18" column="74"/>
+                                      </dataProducers>
+                                    </dataProducers>
+                                    <dataProducers xsi:type="code:PropertyAccess" property="/0/@types.6/@properties.2" name="year">
+                                      <dataProducer xsi:type="code:VariableAccess" variable="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.7" name="film">
+                                        <start line="18" column="77"/>
+                                        <end line="18" column="81"/>
+                                      </dataProducer>
+                                    </dataProducers>
+                                  </dataProducers>
+                                </arguments>
+                                <dataProducer xsi:type="code:PropertyAccess" property="/0/@types.3/@properties.0" name="log">
+                                  <dataProducer xsi:type="code:VariableAccess" variable="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.5" name="console">
+                                    <start line="18" column="5"/>
+                                    <end line="18" column="12"/>
+                                  </dataProducer>
+                                </dataProducer>
+                              </statements>
+                              <variables xsi:type="code:Parameter" name="err"/>
+                              <variables xsi:type="code:Parameter" name="person"/>
+                            </dataProducers>
+                          </arguments>
+                          <dataProducer xsi:type="code:PropertyAccess" name="findOne">
+                            <dataProducer xsi:type="code:Call" name="collection">
+                              <start line="16" column="3"/>
+                              <end line="16" column="26"/>
+                              <arguments>
+                                <dataProducers xsi:type="code:Literal" literal="&quot;people&quot;" type="/0/@types.4">
+                                  <start line="16" column="17"/>
+                                  <end line="16" column="25"/>
+                                </dataProducers>
+                              </arguments>
+                              <dataProducer xsi:type="code:PropertyAccess" property="/0/@types.5/@properties.0" name="collection">
+                                <dataProducer xsi:type="code:VariableAccess" variable="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.6" name="db">
+                                  <start line="16" column="3"/>
+                                  <end line="16" column="5"/>
+                                </dataProducer>
+                              </dataProducer>
+                            </dataProducer>
+                          </dataProducer>
+                        </statements>
+                        <variables xsi:type="code:Parameter" name="err"/>
+                        <variables xsi:type="code:Parameter" name="film"/>
+                      </dataProducers>
+                    </arguments>
+                    <dataProducer xsi:type="code:PropertyAccess" name="findOne">
+                      <dataProducer xsi:type="code:Call" name="collection">
+                        <start line="14" column="1"/>
+                        <end line="14" column="23"/>
+                        <arguments>
+                          <dataProducers xsi:type="code:Literal" literal="'films'" type="/0/@types.0">
+                            <start line="14" column="15"/>
+                            <end line="14" column="22"/>
+                          </dataProducers>
+                        </arguments>
+                        <dataProducer xsi:type="code:PropertyAccess" property="/0/@types.5/@properties.0" name="collection">
+                          <dataProducer xsi:type="code:VariableAccess" variable="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.6" name="db">
+                            <start line="14" column="1"/>
+                            <end line="14" column="3"/>
+                          </dataProducer>
+                        </dataProducer>
+                      </dataProducer>
+                    </dataProducer>
+                  </statements>
+                  <variables xsi:type="code:Parameter" name="err"/>
+                  <variables xsi:type="code:Parameter" name="client"/>
+                </dataProducers>
+              </arguments>
+              <dataProducer xsi:type="code:PropertyAccess" property="/0/@types.1/@dataContainer/@properties.0" name="connect">
+                <dataProducer xsi:type="code:VariableAccess" variable="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.4" name="client">
+                  <start line="10"/>
+                  <end line="10" column="6"/>
+                </dataProducer>
+              </dataProducer>
+            </statements>
+            <variables name="MongoClient"/>
+            <variables name="require"/>
+            <variables name="url"/>
+            <variables name="dbName"/>
+            <variables name="client" type="/0/@types.1"/>
+            <variables name="console" type="/0/@types.3"/>
+            <variables name="db" type="/0/@types.5"/>
+            <variables name="film" type="/0/@types.6"/>
+            <variables name="person" type="/0/@types.7"/>
+          </codeBlock>
+        </codeContainer>
+      </subContainer>
+    </container>
+    <types xsi:type="code:PrimitiveType" type="integer"/>
+    <types xsi:type="code:CodeContainer">
+      <dataContainer>
+        <properties name="connect" dataContainer="/0/@types.1/@dataContainer"/>
+        <properties name="db" dataContainer="/0/@types.1/@dataContainer"/>
+      </dataContainer>
+    </types>
+    <types xsi:type="code:PrimitiveType" type="boolean"/>
+    <types xsi:type="code:DataContainer" name="console">
+      <properties name="log" dataContainer="/0/@types.3"/>
+    </types>
+    <types xsi:type="code:PrimitiveType" type="String"/>
+    <types xsi:type="code:DataContainer" name="db">
+      <properties name="collection" dataContainer="/0/@types.5"/>
+    </types>
+    <types xsi:type="code:DataContainer" name="film">
+      <properties name="director" dataContainer="/0/@types.6"/>
+      <properties name="title" dataContainer="/0/@types.6"/>
+      <properties name="year" dataContainer="/0/@types.6"/>
+    </types>
+    <types xsi:type="code:DataContainer" name="person">
+      <properties name="name" dataContainer="/0/@types.7"/>
+      <properties name="surname" dataContainer="/0/@types.7"/>
+    </types>
+  </code:Code>
+  <codeGraph:CodeGraph code="/0">
+    <subGrahps xsi:type="codeGraph:CodeBlockSubGraph" codeBlock="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0">
+      <nodes>
+        <outgoingEdges target="/1/@subGrahps.0/@nodes.1" source="/1/@subGrahps.0/@nodes.0"/>
+      </nodes>
+      <nodes variables="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.0" statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.0" nodeType="StatementNode" incomingEdges="/1/@subGrahps.0/@nodes.0/@outgoingEdges.0">
+        <outgoingEdges target="/1/@subGrahps.0/@nodes.2" source="/1/@subGrahps.0/@nodes.1"/>
+      </nodes>
+      <nodes statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.0/@initialization" nodeType="ControlNode" incomingEdges="/1/@subGrahps.0/@nodes.1/@outgoingEdges.0">
+        <outgoingEdges target="/1/@subGrahps.0/@nodes.3" source="/1/@subGrahps.0/@nodes.2"/>
+      </nodes>
+      <nodes variables="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.1" statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.0/@initialization/@dataProducer/@dataProducer" nodeType="StatementNode" incomingEdges="/1/@subGrahps.0/@nodes.2/@outgoingEdges.0">
+        <outgoingEdges target="/1/@subGrahps.0/@nodes.4" source="/1/@subGrahps.0/@nodes.3"/>
+      </nodes>
+      <nodes variables="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.0" statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.0/@initialization/@dataProducer" nodeType="StatementNode" incomingEdges="/1/@subGrahps.0/@nodes.3/@outgoingEdges.0">
+        <outgoingEdges type="ARGUMENT" target="/1/@subGrahps.0/@nodes.7" source="/1/@subGrahps.0/@nodes.4"/>
+        <outgoingEdges target="/1/@subGrahps.0/@nodes.8" source="/1/@subGrahps.0/@nodes.4"/>
+      </nodes>
+      <nodes/>
+      <nodes nodeType="EndNode"/>
+      <nodes statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.0/@initialization/@dataProducer/@arguments.0/@dataProducers.0" nodeType="Argument" incomingEdges="/1/@subGrahps.0/@nodes.4/@outgoingEdges.0"/>
+      <nodes variables="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.2" statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.1" nodeType="StatementNode" incomingEdges="/1/@subGrahps.0/@nodes.4/@outgoingEdges.1">
+        <outgoingEdges target="/1/@subGrahps.0/@nodes.9" source="/1/@subGrahps.0/@nodes.8"/>
+      </nodes>
+      <nodes variables="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.2" statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.1/@initialization" nodeType="StatementNode" incomingEdges="/1/@subGrahps.0/@nodes.8/@outgoingEdges.0">
+        <outgoingEdges target="/1/@subGrahps.0/@nodes.10" source="/1/@subGrahps.0/@nodes.9"/>
+      </nodes>
+      <nodes variables="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.3" statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.2" nodeType="StatementNode" incomingEdges="/1/@subGrahps.0/@nodes.9/@outgoingEdges.0">
+        <outgoingEdges target="/1/@subGrahps.0/@nodes.11" source="/1/@subGrahps.0/@nodes.10"/>
+      </nodes>
+      <nodes variables="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.3" statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.2/@initialization" nodeType="StatementNode" incomingEdges="/1/@subGrahps.0/@nodes.10/@outgoingEdges.0">
+        <outgoingEdges target="/1/@subGrahps.0/@nodes.12" source="/1/@subGrahps.0/@nodes.11"/>
+      </nodes>
+      <nodes variables="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.4" statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.3" nodeType="StatementNode" incomingEdges="/1/@subGrahps.0/@nodes.11/@outgoingEdges.0">
+        <outgoingEdges target="/1/@subGrahps.0/@nodes.13" source="/1/@subGrahps.0/@nodes.12"/>
+      </nodes>
+      <nodes variables="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.4" statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.3/@initialization" nodeType="StatementNode" incomingEdges="/1/@subGrahps.0/@nodes.12/@outgoingEdges.0">
+        <outgoingEdges target="/1/@subGrahps.0/@nodes.14" source="/1/@subGrahps.0/@nodes.13"/>
+      </nodes>
+      <nodes variables="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.4" statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@dataProducer" nodeType="ControlNode" incomingEdges="/1/@subGrahps.0/@nodes.13/@outgoingEdges.0">
+        <outgoingEdges target="/1/@subGrahps.0/@nodes.15" source="/1/@subGrahps.0/@nodes.14"/>
+      </nodes>
+      <nodes variables="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@variables.0 /0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@variables.1" statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4" nodeType="StatementNode" incomingEdges="/1/@subGrahps.0/@nodes.14/@outgoingEdges.0">
+        <outgoingEdges type="CALL" target="/1/@subGrahps.1/@nodes.0" source="/1/@subGrahps.0/@nodes.15"/>
+        <outgoingEdges target="/1/@subGrahps.0/@nodes.18" source="/1/@subGrahps.0/@nodes.15"/>
+      </nodes>
+      <nodes/>
+      <nodes nodeType="EndNode"/>
+      <nodes nodeType="EndNode" incomingEdges="/1/@subGrahps.0/@nodes.15/@outgoingEdges.1"/>
+    </subGrahps>
+    <subGrahps xsi:type="codeGraph:CallableBlockSubGraph" callableBlock="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0">
+      <nodes incomingEdges="/1/@subGrahps.0/@nodes.15/@outgoingEdges.0">
+        <outgoingEdges type="PARAMETER" target="/1/@subGrahps.1/@nodes.1" source="/1/@subGrahps.1/@nodes.0"/>
+        <outgoingEdges type="PARAMETER" target="/1/@subGrahps.1/@nodes.2" source="/1/@subGrahps.1/@nodes.0"/>
+        <outgoingEdges target="/1/@subGrahps.1/@nodes.3" source="/1/@subGrahps.1/@nodes.0"/>
+      </nodes>
+      <nodes variables="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@variables.0" statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@variables.0" nodeType="Parameter" incomingEdges="/1/@subGrahps.1/@nodes.0/@outgoingEdges.0"/>
+      <nodes variables="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@variables.1" statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@variables.1" nodeType="Parameter" incomingEdges="/1/@subGrahps.1/@nodes.0/@outgoingEdges.1"/>
+      <nodes variables="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.5" statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.0/@dataProducer" nodeType="ControlNode" incomingEdges="/1/@subGrahps.1/@nodes.0/@outgoingEdges.2">
+        <outgoingEdges target="/1/@subGrahps.1/@nodes.4" source="/1/@subGrahps.1/@nodes.3"/>
+      </nodes>
+      <nodes statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.0" nodeType="StatementNode" incomingEdges="/1/@subGrahps.1/@nodes.3/@outgoingEdges.0">
+        <outgoingEdges type="ARGUMENT" target="/1/@subGrahps.1/@nodes.7" source="/1/@subGrahps.1/@nodes.4"/>
+        <outgoingEdges target="/1/@subGrahps.1/@nodes.8" source="/1/@subGrahps.1/@nodes.4"/>
+      </nodes>
+      <nodes/>
+      <nodes nodeType="EndNode"/>
+      <nodes statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.0/@arguments.0/@dataProducers.0" nodeType="Argument" incomingEdges="/1/@subGrahps.1/@nodes.4/@outgoingEdges.0"/>
+      <nodes variables="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.6" statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.1" nodeType="StatementNode" incomingEdges="/1/@subGrahps.1/@nodes.4/@outgoingEdges.1">
+        <outgoingEdges target="/1/@subGrahps.1/@nodes.9" source="/1/@subGrahps.1/@nodes.8"/>
+      </nodes>
+      <nodes variables="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.4" statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.1/@initialization/@dataProducer" nodeType="ControlNode" incomingEdges="/1/@subGrahps.1/@nodes.8/@outgoingEdges.0">
+        <outgoingEdges target="/1/@subGrahps.1/@nodes.10" source="/1/@subGrahps.1/@nodes.9"/>
+      </nodes>
+      <nodes variables="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.3 /0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.6" statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.1/@initialization" nodeType="StatementNode" incomingEdges="/1/@subGrahps.1/@nodes.9/@outgoingEdges.0">
+        <outgoingEdges type="ARGUMENT" target="/1/@subGrahps.1/@nodes.13" source="/1/@subGrahps.1/@nodes.10"/>
+        <outgoingEdges target="/1/@subGrahps.1/@nodes.14" source="/1/@subGrahps.1/@nodes.10"/>
+      </nodes>
+      <nodes/>
+      <nodes nodeType="EndNode"/>
+      <nodes variables="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.3" statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.1/@initialization/@arguments.0/@dataProducers.0" nodeType="Argument" incomingEdges="/1/@subGrahps.1/@nodes.10/@outgoingEdges.0"/>
+      <nodes statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@dataProducer" nodeType="ControlNode" incomingEdges="/1/@subGrahps.1/@nodes.10/@outgoingEdges.1">
+        <outgoingEdges target="/1/@subGrahps.1/@nodes.15" source="/1/@subGrahps.1/@nodes.14"/>
+      </nodes>
+      <nodes variables="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.6" statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@dataProducer/@dataProducer/@dataProducer" nodeType="ControlNode" incomingEdges="/1/@subGrahps.1/@nodes.14/@outgoingEdges.0">
+        <outgoingEdges target="/1/@subGrahps.1/@nodes.16" source="/1/@subGrahps.1/@nodes.15"/>
+      </nodes>
+      <nodes statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@dataProducer/@dataProducer" nodeType="StatementNode" incomingEdges="/1/@subGrahps.1/@nodes.15/@outgoingEdges.0">
+        <outgoingEdges type="ARGUMENT" target="/1/@subGrahps.1/@nodes.19" source="/1/@subGrahps.1/@nodes.16"/>
+        <outgoingEdges target="/1/@subGrahps.1/@nodes.20" source="/1/@subGrahps.1/@nodes.16"/>
+      </nodes>
+      <nodes/>
+      <nodes nodeType="EndNode"/>
+      <nodes statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@dataProducer/@dataProducer/@arguments.0/@dataProducers.0" nodeType="Argument" incomingEdges="/1/@subGrahps.1/@nodes.16/@outgoingEdges.0"/>
+      <nodes variables="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0/@variables.0 /0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0/@variables.1" statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2" nodeType="StatementNode" incomingEdges="/1/@subGrahps.1/@nodes.16/@outgoingEdges.1">
+        <outgoingEdges type="ARGUMENT" target="/1/@subGrahps.1/@nodes.23" source="/1/@subGrahps.1/@nodes.20"/>
+        <outgoingEdges type="CALL" target="/1/@subGrahps.2/@nodes.0" source="/1/@subGrahps.1/@nodes.20"/>
+      </nodes>
+      <nodes/>
+      <nodes nodeType="EndNode"/>
+      <nodes statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.0/@dataProducers.0" nodeType="Argument" incomingEdges="/1/@subGrahps.1/@nodes.20/@outgoingEdges.0"/>
+      <nodes variables="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0/@statements.0/@arguments.1/@dataProducers.0/@variables.0 /0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0/@statements.0/@arguments.1/@dataProducers.0/@variables.1 /0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0/@variables.0 /0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0/@variables.1 /0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@variables.0 /0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@variables.1" nodeType="EndNode"/>
+    </subGrahps>
+    <subGrahps xsi:type="codeGraph:CallableBlockSubGraph" callableBlock="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0">
+      <nodes incomingEdges="/1/@subGrahps.1/@nodes.20/@outgoingEdges.1">
+        <outgoingEdges type="PARAMETER" target="/1/@subGrahps.2/@nodes.1" source="/1/@subGrahps.2/@nodes.0"/>
+        <outgoingEdges type="PARAMETER" target="/1/@subGrahps.2/@nodes.2" source="/1/@subGrahps.2/@nodes.0"/>
+        <outgoingEdges target="/1/@subGrahps.2/@nodes.3" source="/1/@subGrahps.2/@nodes.0"/>
+      </nodes>
+      <nodes variables="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0/@variables.0" statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0/@variables.0" nodeType="Parameter" incomingEdges="/1/@subGrahps.2/@nodes.0/@outgoingEdges.0"/>
+      <nodes variables="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0/@variables.1" statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0/@variables.1" nodeType="Parameter" incomingEdges="/1/@subGrahps.2/@nodes.0/@outgoingEdges.1"/>
+      <nodes statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0/@statements.0/@dataProducer" nodeType="ControlNode" incomingEdges="/1/@subGrahps.2/@nodes.0/@outgoingEdges.2">
+        <outgoingEdges target="/1/@subGrahps.2/@nodes.4" source="/1/@subGrahps.2/@nodes.3"/>
+      </nodes>
+      <nodes variables="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.6" statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0/@statements.0/@dataProducer/@dataProducer/@dataProducer" nodeType="ControlNode" incomingEdges="/1/@subGrahps.2/@nodes.3/@outgoingEdges.0">
+        <outgoingEdges target="/1/@subGrahps.2/@nodes.5" source="/1/@subGrahps.2/@nodes.4"/>
+      </nodes>
+      <nodes statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0/@statements.0/@dataProducer/@dataProducer" nodeType="StatementNode" incomingEdges="/1/@subGrahps.2/@nodes.4/@outgoingEdges.0">
+        <outgoingEdges type="ARGUMENT" target="/1/@subGrahps.2/@nodes.6" source="/1/@subGrahps.2/@nodes.5"/>
+        <outgoingEdges target="/1/@subGrahps.2/@nodes.7" source="/1/@subGrahps.2/@nodes.5"/>
+      </nodes>
+      <nodes statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0/@statements.0/@dataProducer/@dataProducer/@arguments.0/@dataProducers.0" nodeType="Argument" incomingEdges="/1/@subGrahps.2/@nodes.5/@outgoingEdges.0"/>
+      <nodes variables="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.7 /0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0/@statements.0/@arguments.1/@dataProducers.0/@variables.0 /0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0/@statements.0/@arguments.1/@dataProducers.0/@variables.1" statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0/@statements.0" nodeType="StatementNode" incomingEdges="/1/@subGrahps.2/@nodes.5/@outgoingEdges.1">
+        <outgoingEdges type="ARGUMENT" target="/1/@subGrahps.2/@nodes.8" source="/1/@subGrahps.2/@nodes.7"/>
+        <outgoingEdges type="CALL" target="/1/@subGrahps.3/@nodes.0" source="/1/@subGrahps.2/@nodes.7"/>
+      </nodes>
+      <nodes variables="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.7" statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0/@statements.0/@arguments.0/@dataProducers.0" nodeType="Argument" incomingEdges="/1/@subGrahps.2/@nodes.7/@outgoingEdges.0"/>
+    </subGrahps>
+    <subGrahps xsi:type="codeGraph:CallableBlockSubGraph" callableBlock="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0/@statements.0/@arguments.1/@dataProducers.0">
+      <nodes incomingEdges="/1/@subGrahps.2/@nodes.7/@outgoingEdges.1">
+        <outgoingEdges type="PARAMETER" target="/1/@subGrahps.3/@nodes.1" source="/1/@subGrahps.3/@nodes.0"/>
+        <outgoingEdges type="PARAMETER" target="/1/@subGrahps.3/@nodes.2" source="/1/@subGrahps.3/@nodes.0"/>
+        <outgoingEdges target="/1/@subGrahps.3/@nodes.3" source="/1/@subGrahps.3/@nodes.0"/>
+      </nodes>
+      <nodes variables="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0/@statements.0/@arguments.1/@dataProducers.0/@variables.0" statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0/@statements.0/@arguments.1/@dataProducers.0/@variables.0" nodeType="Parameter" incomingEdges="/1/@subGrahps.3/@nodes.0/@outgoingEdges.0"/>
+      <nodes variables="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0/@statements.0/@arguments.1/@dataProducers.0/@variables.1" statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0/@statements.0/@arguments.1/@dataProducers.0/@variables.1" nodeType="Parameter" incomingEdges="/1/@subGrahps.3/@nodes.0/@outgoingEdges.1"/>
+      <nodes variables="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.5" statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0/@statements.0/@arguments.1/@dataProducers.0/@statements.0/@dataProducer" nodeType="ControlNode" incomingEdges="/1/@subGrahps.3/@nodes.0/@outgoingEdges.2">
+        <outgoingEdges target="/1/@subGrahps.3/@nodes.4" source="/1/@subGrahps.3/@nodes.3"/>
+      </nodes>
+      <nodes variables="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.8 /0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.7" statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0/@statements.0/@arguments.1/@dataProducers.0/@statements.0" nodeType="StatementNode" incomingEdges="/1/@subGrahps.3/@nodes.3/@outgoingEdges.0">
+        <outgoingEdges type="ARGUMENT" target="/1/@subGrahps.3/@nodes.5" source="/1/@subGrahps.3/@nodes.4"/>
+      </nodes>
+      <nodes variables="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.8 /0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.7" statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0/@statements.0/@arguments.1/@dataProducers.0/@statements.0/@arguments.0/@dataProducers.0" nodeType="Argument" incomingEdges="/1/@subGrahps.3/@nodes.4/@outgoingEdges.0"/>
+    </subGrahps>
+  </codeGraph:CodeGraph>
+  <databaseOperationsSchema:DatabaseOperationsSchema>
+    <databaseOperations xsi:type="databaseOperationsSchema:Read" precedingDatabaseOperation="/2/@databaseOperations.1" container="/2/@containers.0" statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2/@arguments.1/@dataProducers.0/@statements.0" resultDataStructure="/2/@containers.0/@dataStructures.0">
+      <targetingParameter parameterFields="/2/@containers.0/@dataStructures.0/@fields.0"/>
+    </databaseOperations>
+    <databaseOperations xsi:type="databaseOperationsSchema:Read" followingDatabaseOperation="/2/@databaseOperations.0" container="/2/@containers.1" statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.4/@arguments.0/@dataProducers.0/@statements.2" resultDataStructure="/2/@containers.1/@dataStructures.0">
+      <targetingParameter parameterFields="/2/@containers.1/@dataStructures.0/@fields.0"/>
+    </databaseOperations>
+    <containers name="people">
+      <dataStructures container="/2/@containers.0">
+        <fields name="idCard"/>
+        <fields name="name"/>
+        <fields name="surname"/>
+      </dataStructures>
+    </containers>
+    <containers name="films">
+      <dataStructures container="/2/@containers.1">
+        <fields name="title">
+          <type xsi:type="databaseOperationsSchema:PrimitiveType" name="String"/>
+        </fields>
+        <fields name="director">
+          <type xsi:type="databaseOperationsSchema:Reference" targetContainer="/2/@containers.0" targetField="/2/@containers.0/@dataStructures.0/@fields.0"/>
+        </fields>
+        <fields name="year"/>
+        <fields name="name" duplicatedField="/2/@containers.0/@dataStructures.0/@fields.1"/>
+        <fields name="surname" duplicatedField="/2/@containers.0/@dataStructures.0/@fields.2"/>
+      </dataStructures>
+    </containers>
+  </databaseOperationsSchema:DatabaseOperationsSchema>
+</xmi:XMI>

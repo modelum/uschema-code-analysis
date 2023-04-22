@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Transf
+Bundle-SymbolicName: es.um.uschema.code.transfs.codegraph2neo4j
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.emf.ecore,
+ es.um.uschema.code.metamodels.code
+Export-Package: es.um.nosql.code.s13e.transfs.codegraph2neo4j.transf
+Import-Package: es.um.nosql.code.s13e.metamodels.code,
+ es.um.nosql.code.s13e.metamodels.codeGraph,
+ es.um.nosql.code.s13e.metamodels.codeGraph.utils,
+ es.um.nosql.code.s13e.transfs.code2text.javascript.transf,
+ es.um.nosql.code.s13e.transfs.code2text.javascript.transf.statements
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Automatic-Module-Name: es.um.nosql.code.s13e.transfs.codegraph2neo4j.transf

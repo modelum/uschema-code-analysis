@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Transf
+Bundle-SymbolicName: es.um.uschema.code.transfs.text2json
+Bundle-Version: 1.0.0.qualifier
+Export-Package: es.um.nosql.code.s13e.transfs.text2json.transf
+Automatic-Module-Name: es.um.nosql.code.s13e.transfs.text2json.transf
+Bundle-RequiredExecutionEnvironment: JavaSE-11

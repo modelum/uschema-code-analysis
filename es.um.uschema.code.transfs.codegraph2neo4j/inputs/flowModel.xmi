@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:code="http://es.um.nosql.code.s13e.metamodels/code" xmlns:flow="http://es.um.nosql.code.s13e.metamodels/flow">
+  <code:Code language="JavaScript">
+    <container type="FOLDER" name="inputs">
+      <subContainer name="example.json">
+        <codeContainer type="SCRIPT">
+          <codeBlock xsi:type="code:CallableBlock" name="pow" parameters="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.0 /0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.1">
+            <statements xsi:type="code:VariableDeclaration" variable="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.2">
+              <initialization xsi:type="code:Literal" literal="1"/>
+            </statements>
+            <statements xsi:type="code:Loop" type="FOR">
+              <codeBlock type="LOOP_BLOCK">
+                <statements xsi:type="code:Assign" variable="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.2">
+                  <inputs xsi:type="code:Call" callableBlock="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.1">
+                    <arguments parameter="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.1/@variables.0">
+                      <dataProducer xsi:type="code:VariableAccess" variable="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.2"/>
+                    </arguments>
+                    <arguments parameter="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.1/@variables.1">
+                      <dataProducer xsi:type="code:VariableAccess" variable="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.0"/>
+                    </arguments>
+                  </inputs>
+                </statements>
+                <variables name="i"/>
+              </codeBlock>
+              <loopPart type="INITIALIZATION">
+                <statement xsi:type="code:VariableDeclaration" variable="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.1/@codeBlock/@variables.0">
+                  <initialization xsi:type="code:Literal" literal="0"/>
+                </statement>
+              </loopPart>
+              <loopPart>
+                <statement xsi:type="code:Expression" type="LESS">
+                  <conditionalExpression xsi:type="code:VariableAccess" variable="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.1/@codeBlock/@variables.0"/>
+                  <conditionalExpression xsi:type="code:VariableAccess" variable="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.1"/>
+                </statement>
+              </loopPart>
+              <loopPart type="UPDATER">
+                <statement xsi:type="code:UnaryOperation" type="POST_PLUSPLUS" variable="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.1/@codeBlock/@variables.0"/>
+              </loopPart>
+            </statements>
+            <statements xsi:type="code:Return">
+              <dataProducer xsi:type="code:VariableAccess" variable="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@variables.2"/>
+            </statements>
+            <variables xsi:type="code:Parameter" name="base"/>
+            <variables xsi:type="code:Parameter" name="exponent"/>
+            <variables name="result"/>
+          </codeBlock>
+          <codeBlock xsi:type="code:CallableBlock" name="multiply" parameters="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.1/@variables.0 /0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.1/@variables.1">
+            <statements xsi:type="code:Return">
+              <dataProducer xsi:type="code:Operation" type="MULTIPLY">
+                <dataProducer xsi:type="code:VariableAccess" variable="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.1/@variables.0"/>
+                <dataProducer xsi:type="code:VariableAccess" variable="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.1/@variables.1"/>
+              </dataProducer>
+            </statements>
+            <variables xsi:type="code:Parameter" name="firstOperator"/>
+            <variables xsi:type="code:Parameter" name="secondOperator"/>
+          </codeBlock>
+        </codeContainer>
+      </subContainer>
+      <subContainer name="example2.json">
+        <codeContainer type="SCRIPT">
+          <codeBlock xsi:type="code:CallableBlock" name="pow" parameters="/0/@container.0/@subContainer.1/@codeContainer.0/@codeBlock.0/@variables.0 /0/@container.0/@subContainer.1/@codeContainer.0/@codeBlock.0/@variables.1">
+            <statements xsi:type="code:VariableDeclaration" variable="/0/@container.0/@subContainer.1/@codeContainer.0/@codeBlock.0/@variables.2">
+              <initialization xsi:type="code:Literal" literal="1"/>
+            </statements>
+            <statements xsi:type="code:Loop" type="FOR">
+              <codeBlock type="LOOP_BLOCK">
+                <statements xsi:type="code:Assign" variable="/0/@container.0/@subContainer.1/@codeContainer.0/@codeBlock.0/@variables.2">
+                  <inputs xsi:type="code:Operation" type="MULTIPLY">
+                    <dataProducer xsi:type="code:VariableAccess" variable="/0/@container.0/@subContainer.1/@codeContainer.0/@codeBlock.0/@variables.2"/>
+                    <dataProducer xsi:type="code:VariableAccess" variable="/0/@container.0/@subContainer.1/@codeContainer.0/@codeBlock.0/@variables.0"/>
+                  </inputs>
+                </statements>
+                <variables name="i"/>
+              </codeBlock>
+              <loopPart type="INITIALIZATION">
+                <statement xsi:type="code:VariableDeclaration" variable="/0/@container.0/@subContainer.1/@codeContainer.0/@codeBlock.0/@statements.1/@codeBlock/@variables.0">
+                  <initialization xsi:type="code:Literal" literal="0"/>
+                </statement>
+              </loopPart>
+              <loopPart>
+                <statement xsi:type="code:Expression" type="LESS">
+                  <conditionalExpression xsi:type="code:VariableAccess" variable="/0/@container.0/@subContainer.1/@codeContainer.0/@codeBlock.0/@statements.1/@codeBlock/@variables.0"/>
+                  <conditionalExpression xsi:type="code:VariableAccess" variable="/0/@container.0/@subContainer.1/@codeContainer.0/@codeBlock.0/@variables.1"/>
+                </statement>
+              </loopPart>
+              <loopPart type="UPDATER">
+                <statement xsi:type="code:UnaryOperation" type="POST_PLUSPLUS" variable="/0/@container.0/@subContainer.1/@codeContainer.0/@codeBlock.0/@statements.1/@codeBlock/@variables.0"/>
+              </loopPart>
+            </statements>
+            <statements xsi:type="code:Return">
+              <dataProducer xsi:type="code:VariableAccess" variable="/0/@container.0/@subContainer.1/@codeContainer.0/@codeBlock.0/@variables.2"/>
+            </statements>
+            <variables xsi:type="code:Parameter" name="base"/>
+            <variables xsi:type="code:Parameter" name="exponent"/>
+            <variables name="result"/>
+          </codeBlock>
+        </codeContainer>
+      </subContainer>
+    </container>
+  </code:Code>
+  <flow:Application code="/0">
+    <codeFlows xsi:type="flow:CallableBlockFlow" callableBlock="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0">
+      <nodes>
+        <edges type="NEXT" node="/1/@codeFlows.0/@nodes.1"/>
+      </nodes>
+      <nodes statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.0" nodeType="StatementNode">
+        <edges type="NEXT" node="/1/@codeFlows.0/@nodes.2"/>
+      </nodes>
+      <nodes statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.1/@loopPart.0/@statement.0" nodeType="StatementNode">
+        <edges type="NEXT" node="/1/@codeFlows.0/@nodes.3"/>
+      </nodes>
+      <nodes statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.1/@loopPart.1/@statement.0" nodeType="StatementNode">
+        <edges type="NEXT" node="/1/@codeFlows.0/@nodes.4"/>
+        <edges type="NEXT" node="/1/@codeFlows.0/@nodes.6"/>
+      </nodes>
+      <nodes statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.1/@codeBlock/@statements.0/@inputs.0" nodeType="StatementNode">
+        <edges type="NEXT" node="/1/@codeFlows.0/@nodes.5"/>
+        <edges node="/1/@codeFlows.1/@nodes.0"/>
+      </nodes>
+      <nodes statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.1/@loopPart.2/@statement.0" nodeType="StatementNode">
+        <edges type="NEXT" node="/1/@codeFlows.0/@nodes.3"/>
+      </nodes>
+      <nodes statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.0/@statements.2" nodeType="StatementNode">
+        <edges type="NEXT" node="/1/@codeFlows.0/@nodes.7"/>
+      </nodes>
+      <nodes nodeType="EndNode"/>
+    </codeFlows>
+    <codeFlows xsi:type="flow:CallableBlockFlow" callableBlock="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.1">
+      <nodes>
+        <edges type="NEXT" node="/1/@codeFlows.1/@nodes.1"/>
+      </nodes>
+      <nodes statement="/0/@container.0/@subContainer.0/@codeContainer.0/@codeBlock.1/@statements.0" nodeType="StatementNode">
+        <edges type="NEXT" node="/1/@codeFlows.1/@nodes.2"/>
+      </nodes>
+      <nodes nodeType="EndNode">
+        <edges type="RETURN" node="/1/@codeFlows.0/@nodes.4"/>
+      </nodes>
+    </codeFlows>
+    <codeFlows xsi:type="flow:CallableBlockFlow" callableBlock="/0/@container.0/@subContainer.1/@codeContainer.0/@codeBlock.0">
+      <nodes>
+        <edges type="NEXT" node="/1/@codeFlows.2/@nodes.1"/>
+      </nodes>
+      <nodes statement="/0/@container.0/@subContainer.1/@codeContainer.0/@codeBlock.0/@statements.0" nodeType="StatementNode">
+        <edges type="NEXT" node="/1/@codeFlows.2/@nodes.2"/>
+      </nodes>
+      <nodes statement="/0/@container.0/@subContainer.1/@codeContainer.0/@codeBlock.0/@statements.1/@loopPart.0/@statement.0" nodeType="StatementNode">
+        <edges type="NEXT" node="/1/@codeFlows.2/@nodes.3"/>
+      </nodes>
+      <nodes statement="/0/@container.0/@subContainer.1/@codeContainer.0/@codeBlock.0/@statements.1/@loopPart.1/@statement.0" nodeType="StatementNode">
+        <edges type="NEXT" node="/1/@codeFlows.2/@nodes.4"/>
+        <edges type="NEXT" node="/1/@codeFlows.2/@nodes.6"/>
+      </nodes>
+      <nodes statement="/0/@container.0/@subContainer.1/@codeContainer.0/@codeBlock.0/@statements.1/@codeBlock/@statements.0/@inputs.0" nodeType="StatementNode">
+        <edges type="NEXT" node="/1/@codeFlows.2/@nodes.5"/>
+      </nodes>
+      <nodes statement="/0/@container.0/@subContainer.1/@codeContainer.0/@codeBlock.0/@statements.1/@loopPart.2/@statement.0" nodeType="StatementNode">
+        <edges type="NEXT" node="/1/@codeFlows.2/@nodes.3"/>
+      </nodes>
+      <nodes statement="/0/@container.0/@subContainer.1/@codeContainer.0/@codeBlock.0/@statements.2" nodeType="StatementNode">
+        <edges type="NEXT" node="/1/@codeFlows.2/@nodes.7"/>
+      </nodes>
+      <nodes nodeType="EndNode"/>
+    </codeFlows>
+  </flow:Application>
+</xmi:XMI>
