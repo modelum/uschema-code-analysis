@@ -33,5 +33,3 @@ This project depend on the U-Schema core projects that are found in:
 $ git clone https://github.com/modelum/uschema
 ```
 
-## List of related publications:
-Carlos J. Fernández-Candel, Anthony Cleve, and Jesús J. García-Molina. Towards the Automated Extraction and Refactoring of NoSQL Schemas from Application Code
