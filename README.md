@@ -1,4 +1,4 @@
-# uschema-code-analysis
+# Automated Extraction and Refactoring of NoSQL Schemas from Application Code
 
 This repository contains the implementation of a code analysis framework to infer NoSQL database schemas and generate refactoring plans from application source code. Produces logical schemas conforming to the [U-Schema metamodel](https://github.com/modelum/uschema).
 
