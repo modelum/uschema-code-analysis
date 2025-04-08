@@ -34,4 +34,4 @@ $ git clone https://github.com/modelum/uschema
 ```
 
 ## List of related publications:
-Towards the Automated Extraction and Refactoring of NoSQL Schemas from Application Code
+Carlos J. Fernández-Candel, Anthony Cleve, and Jesús J. García-Molina. Towards the Automated Extraction and Refactoring of NoSQL Schemas from Application Code
