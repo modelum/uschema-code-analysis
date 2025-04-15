@@ -15,8 +15,9 @@ The approach is designed to support schema discovery in schemaless NoSQL databas
 
 ## Features
 
-- Code model injection from JavaScript using Esprima.
-- Construction of control flow and database operation models.
+- Code metamodel.
+- Control flow metamodel.
+- Database operation and Structure metamodel.
 - Extraction of U-Schema logical schemas from code.
 - Generation of join query removal plans.
 - Automated schema, data, and code updates.
