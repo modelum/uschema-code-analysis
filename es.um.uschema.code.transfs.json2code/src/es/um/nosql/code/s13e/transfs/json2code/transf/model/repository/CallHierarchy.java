@@ -9,11 +9,11 @@ import java.util.stream.Collectors;
 
 import org.eclipse.emf.common.util.EList;
 
-import es.um.nosql.code.s13e.metamodels.code.Argument;
-import es.um.nosql.code.s13e.metamodels.code.Call;
-import es.um.nosql.code.s13e.metamodels.code.CallableBlock;
-import es.um.nosql.code.s13e.metamodels.code.CodeContainer;
-import es.um.nosql.code.s13e.metamodels.code.Parameter;
+import es.um.uschema.code.metamodels.code.Argument;
+import es.um.uschema.code.metamodels.code.Call;
+import es.um.uschema.code.metamodels.code.CallableBlock;
+import es.um.uschema.code.metamodels.code.CodeContainer;
+import es.um.uschema.code.metamodels.code.Parameter;
 
 public class CallHierarchy
 {

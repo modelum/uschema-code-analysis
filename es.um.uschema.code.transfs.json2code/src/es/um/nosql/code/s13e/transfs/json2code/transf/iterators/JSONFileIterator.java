@@ -3,12 +3,12 @@ package es.um.nosql.code.s13e.transfs.json2code.transf.iterators;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import es.um.nosql.code.s13e.metamodels.code.CodeBlock;
-import es.um.nosql.code.s13e.metamodels.code.CodeBlockType;
 import es.um.nosql.code.s13e.transfs.json2code.transf.analyzers.JSONAnalyzer;
 import es.um.nosql.code.s13e.transfs.json2code.transf.builders.ContainersBuilder;
 import es.um.nosql.code.s13e.transfs.json2code.transf.model.repository.CodeModelRepository;
 import es.um.nosql.code.s13e.transfs.json2code.transf.warnings.WarningRepository;
+import es.um.uschema.code.metamodels.code.CodeBlock;
+import es.um.uschema.code.metamodels.code.CodeBlockType;
 
 public class JSONFileIterator
 {

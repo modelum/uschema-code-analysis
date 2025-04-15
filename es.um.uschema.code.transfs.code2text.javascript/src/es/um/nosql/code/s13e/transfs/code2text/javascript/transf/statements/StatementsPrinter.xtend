@@ -1,61 +1,61 @@
 package es.um.nosql.code.s13e.transfs.code2text.javascript.transf.statements
 
-import es.um.nosql.code.s13e.metamodels.code.Assign
-import es.um.nosql.code.s13e.metamodels.code.Break
-import es.um.nosql.code.s13e.metamodels.code.Call
-import es.um.nosql.code.s13e.metamodels.code.CallableBlock
-import es.um.nosql.code.s13e.metamodels.code.Case
-import es.um.nosql.code.s13e.metamodels.code.CaseType
-import es.um.nosql.code.s13e.metamodels.code.Catch
-import es.um.nosql.code.s13e.metamodels.code.Code
-import es.um.nosql.code.s13e.metamodels.code.CodeBlock
-import es.um.nosql.code.s13e.metamodels.code.CodeBlockType
-import es.um.nosql.code.s13e.metamodels.code.ConditionalExpression
-import es.um.nosql.code.s13e.metamodels.code.DataContainer
-import es.um.nosql.code.s13e.metamodels.code.DataProducer
-import es.um.nosql.code.s13e.metamodels.code.Expression
-import es.um.nosql.code.s13e.metamodels.code.Literal
-import es.um.nosql.code.s13e.metamodels.code.Loop
-import es.um.nosql.code.s13e.metamodels.code.LoopPart
-import es.um.nosql.code.s13e.metamodels.code.LoopPartType
-import es.um.nosql.code.s13e.metamodels.code.LoopType
-import es.um.nosql.code.s13e.metamodels.code.NewArray
-import es.um.nosql.code.s13e.metamodels.code.NewDataContainer
-import es.um.nosql.code.s13e.metamodels.code.Operation
-import es.um.nosql.code.s13e.metamodels.code.Parameter
-import es.um.nosql.code.s13e.metamodels.code.Property
-import es.um.nosql.code.s13e.metamodels.code.PropertyAccess
-import es.um.nosql.code.s13e.metamodels.code.PropertyAssign
-import es.um.nosql.code.s13e.metamodels.code.Return
-import es.um.nosql.code.s13e.metamodels.code.Selection
-import es.um.nosql.code.s13e.metamodels.code.SelectionType
-import es.um.nosql.code.s13e.metamodels.code.Statement
-import es.um.nosql.code.s13e.metamodels.code.Throw
-import es.um.nosql.code.s13e.metamodels.code.Try
-import es.um.nosql.code.s13e.metamodels.code.UnaryOperation
-import es.um.nosql.code.s13e.metamodels.code.UnaryOperationType
-import es.um.nosql.code.s13e.metamodels.code.Variable
-import es.um.nosql.code.s13e.metamodels.code.VariableAccess
-import es.um.nosql.code.s13e.metamodels.code.VariableDeclaration
+import es.um.uschema.code.metamodels.code.Assign
+import es.um.uschema.code.metamodels.code.Break
+import es.um.uschema.code.metamodels.code.Call
+import es.um.uschema.code.metamodels.code.CallableBlock
+import es.um.uschema.code.metamodels.code.Case
+import es.um.uschema.code.metamodels.code.CaseType
+import es.um.uschema.code.metamodels.code.Catch
+import es.um.uschema.code.metamodels.code.Code
+import es.um.uschema.code.metamodels.code.CodeBlock
+import es.um.uschema.code.metamodels.code.CodeBlockType
+import es.um.uschema.code.metamodels.code.ConditionalExpression
+import es.um.uschema.code.metamodels.code.DataContainer
+import es.um.uschema.code.metamodels.code.DataProducer
+import es.um.uschema.code.metamodels.code.Expression
+import es.um.uschema.code.metamodels.code.Literal
+import es.um.uschema.code.metamodels.code.Loop
+import es.um.uschema.code.metamodels.code.LoopPart
+import es.um.uschema.code.metamodels.code.LoopPartType
+import es.um.uschema.code.metamodels.code.LoopType
+import es.um.uschema.code.metamodels.code.NewArray
+import es.um.uschema.code.metamodels.code.NewDataContainer
+import es.um.uschema.code.metamodels.code.Operation
+import es.um.uschema.code.metamodels.code.Parameter
+import es.um.uschema.code.metamodels.code.Property
+import es.um.uschema.code.metamodels.code.PropertyAccess
+import es.um.uschema.code.metamodels.code.PropertyAssign
+import es.um.uschema.code.metamodels.code.Return
+import es.um.uschema.code.metamodels.code.Selection
+import es.um.uschema.code.metamodels.code.SelectionType
+import es.um.uschema.code.metamodels.code.Statement
+import es.um.uschema.code.metamodels.code.Throw
+import es.um.uschema.code.metamodels.code.Try
+import es.um.uschema.code.metamodels.code.UnaryOperation
+import es.um.uschema.code.metamodels.code.UnaryOperationType
+import es.um.uschema.code.metamodels.code.Variable
+import es.um.uschema.code.metamodels.code.VariableAccess
+import es.um.uschema.code.metamodels.code.VariableDeclaration
 import java.util.List
 import java.util.stream.Collectors
 import org.eclipse.emf.common.util.EList
-import es.um.nosql.code.s13e.metamodels.code.NewClass
-import es.um.nosql.code.s13e.metamodels.code.Argument
-import es.um.nosql.code.s13e.metamodels.code.This
-import es.um.nosql.code.s13e.metamodels.code.CodeContainer
-import es.um.nosql.code.s13e.metamodels.code.IndexBasedAccess
-import es.um.nosql.code.s13e.metamodels.code.UnaryExpression
-import es.um.nosql.code.s13e.metamodels.code.Finally
+import es.um.uschema.code.metamodels.code.NewClass
+import es.um.uschema.code.metamodels.code.Argument
+import es.um.uschema.code.metamodels.code.This
+import es.um.uschema.code.metamodels.code.CodeContainer
+import es.um.uschema.code.metamodels.code.IndexBasedAccess
+import es.um.uschema.code.metamodels.code.UnaryExpression
+import es.um.uschema.code.metamodels.code.Finally
 
 class StatementsPrinter {
 	
 	def String generateStatements(CodeBlock codeBlock)
 	{
 		'''
-		«FOR statement : codeBlock.statements»
-			«generateStatement(statement)»«IF semicolonNeeded(statement)»;«ENDIF»
-		«ENDFOR»
+		Â«FOR statement : codeBlock.statementsÂ»
+			Â«generateStatement(statement)Â»Â«IF semicolonNeeded(statement)Â»;Â«ENDIFÂ»
+		Â«ENDFORÂ»
 		'''
 	}	
 	
@@ -78,13 +78,13 @@ class StatementsPrinter {
 	 */
 	def String generateStatements(List<Statement> statements)
 		'''
-		«FOR statement : statements»
-			«generateStatement(statement)»«IF semicolonNeeded(statement)»;«ENDIF»
-		«ENDFOR»
+		Â«FOR statement : statementsÂ»
+			Â«generateStatement(statement)Â»Â«IF semicolonNeeded(statement)Â»;Â«ENDIFÂ»
+		Â«ENDFORÂ»
 		'''
 	
 	def String generateStatements(List<Statement> statements, String separator)
-		'''«FOR statement : statements SEPARATOR separator»«generateStatement(statement)»«ENDFOR»'''
+		'''Â«FOR statement : statements SEPARATOR separatorÂ»Â«generateStatement(statement)Â»Â«ENDFORÂ»'''
 	
 	/** 
 	 * Parameter List of a Function
@@ -100,13 +100,13 @@ class StatementsPrinter {
 	def dispatch String generateStatement(UnaryOperation unaryOperation) 
 	{
 		if (unaryOperation.type.equals(UnaryOperationType.POST_MINUSMINUS)) {
-			return '''«unaryOperation.variable.name»--'''
+			return '''Â«unaryOperation.variable.nameÂ»--'''
 		} else if (unaryOperation.type.equals(UnaryOperationType.POST_PLUSPLUS)) {
-			return '''«unaryOperation.variable.name»++'''
+			return '''Â«unaryOperation.variable.nameÂ»++'''
 		} else if (unaryOperation.type.equals(UnaryOperationType.PRE_MINUSMINUS)) {
-			return '''--«unaryOperation.variable.name»'''
+			return '''--Â«unaryOperation.variable.nameÂ»'''
 		} else if (unaryOperation.type.equals(UnaryOperationType.PRE_PLUSPLUS)) {
-			return '''++«unaryOperation.variable.name»'''
+			return '''++Â«unaryOperation.variable.nameÂ»'''
 		}  
 	}
 	
@@ -124,21 +124,21 @@ class StatementsPrinter {
 	
 	def String generateFunction(CallableBlock callableBlock) 
 		'''
-		function«generateFunctionName(callableBlock)»(«createParametersList(callableBlock.parameters)») {
-			«generateStatements(callableBlock.statements)»
+		functionÂ«generateFunctionName(callableBlock)Â»(Â«createParametersList(callableBlock.parameters)Â») {
+			Â«generateStatements(callableBlock.statements)Â»
 		}'''
 
 	def String generateFunctionName(CallableBlock callableBlock) {
 		if (callableBlock.functionName !== null && !callableBlock.functionName.isEmpty)
-			''' «callableBlock.functionName»'''
+			''' Â«callableBlock.functionNameÂ»'''
 		else
 			''''''
 	}
 
 	def String generateLambda(CallableBlock callableBlock) 
 		'''
-		(«createParametersList(callableBlock.parameters)») => {
-			«generateStatements(callableBlock.statements)»
+		(Â«createParametersList(callableBlock.parameters)Â») => {
+			Â«generateStatements(callableBlock.statements)Â»
 		}'''
 	
 	/** 
@@ -147,17 +147,17 @@ class StatementsPrinter {
 	def dispatch String generateStatement(NewArray newArray) 
 		'''
 		[
-			«FOR dp : newArray.dataProducer SEPARATOR ',\n'»«generateStatement(dp)»«ENDFOR»
+			Â«FOR dp : newArray.dataProducer SEPARATOR ',\n'Â»Â«generateStatement(dp)Â»Â«ENDFORÂ»
 		]'''
 		
 	def dispatch String generateStatement(IndexBasedAccess indexBasedAccess) 
-		'''«generateStatement(indexBasedAccess.dataProducer)»[«generateStatement(indexBasedAccess.index)»]'''
+		'''Â«generateStatement(indexBasedAccess.dataProducer)Â»[Â«generateStatement(indexBasedAccess.index)Â»]'''
 		
 	/** 
 	 * New Class
 	 */
 	def dispatch String generateStatement(NewClass newClass) 
-		'''new «newClass.codeContainer.name»(«generateArguments(newClass.arguments)»)'''
+		'''new Â«newClass.codeContainer.nameÂ»(Â«generateArguments(newClass.arguments)Â»)'''
 			
 	/** 
 	 * Objects
@@ -165,17 +165,17 @@ class StatementsPrinter {
 	def dispatch String generateStatement(NewDataContainer newDataContainer) 
 		'''
 		{
-			«FOR p : newDataContainer.dataContainer.properties SEPARATOR ',\n'»«generateProperty(p)»«ENDFOR»
+			Â«FOR p : newDataContainer.dataContainer.properties SEPARATOR ',\n'Â»Â«generateProperty(p)Â»Â«ENDFORÂ»
 		}'''
 
 	def dispatch String generateProperty(DataContainer dataContainer)
 		'''
-		«dataContainer.name»: {
-			«FOR p : dataContainer.properties SEPARATOR ',\n'»«generateProperty(p)»«ENDFOR»
+		Â«dataContainer.nameÂ»: {
+			Â«FOR p : dataContainer.properties SEPARATOR ',\n'Â»Â«generateProperty(p)Â»Â«ENDFORÂ»
 		}'''
 
 	def dispatch String generateProperty(^Property property)
-		'''«property.name»: «generateStatement(property.initialization)»'''
+		'''Â«property.nameÂ»: Â«generateStatement(property.initialization)Â»'''
 	
 	/** 
 	 * Selection
@@ -189,12 +189,12 @@ class StatementsPrinter {
 	
 	def String processIfStatement(Selection selection) {
 		'''
-		«FOR caseStatement : selection.^case»
-		«generateIfCaseExpression(caseStatement)»
+		Â«FOR caseStatement : selection.^caseÂ»
+		Â«generateIfCaseExpression(caseStatement)Â»
 		{
-			«generateStatements(caseStatement.codeBlock.statements)»
+			Â«generateStatements(caseStatement.codeBlock.statements)Â»
 		}
-		«ENDFOR»
+		Â«ENDFORÂ»
 		'''
 	}
 	
@@ -204,17 +204,17 @@ class StatementsPrinter {
 		if (CaseType.^ELSE.equals(caseStatement.type))
 			return caseType
 
-		return '''«caseType» («generateStatement(caseStatement.conditionalExpression)»)'''
+		return '''Â«caseTypeÂ» (Â«generateStatement(caseStatement.conditionalExpression)Â»)'''
 	}
 	
 	def String processSwitchStatement(Selection selection) {
 		'''
-		switch («getSwitchDiscriminantVariable(selection)»)
+		switch (Â«getSwitchDiscriminantVariable(selection)Â»)
 		{
-		«FOR caseStatement : selection.^case»
-		«generateSwitchCaseExpression(caseStatement)»:
-			«generateStatements(caseStatement.codeBlock.statements)»
-		«ENDFOR»
+		Â«FOR caseStatement : selection.^caseÂ»
+		Â«generateSwitchCaseExpression(caseStatement)Â»:
+			Â«generateStatements(caseStatement.codeBlock.statements)Â»
+		Â«ENDFORÂ»
 		}'''
 	}
 	
@@ -240,7 +240,7 @@ class StatementsPrinter {
 		if (CaseType.^DEFAULT.equals(caseStatement.type))
 			return "default"
 
-		'''case «getCaseLiteral(caseStatement)»'''
+		'''case Â«getCaseLiteral(caseStatement)Â»'''
 	}
 	
 	def String getCaseLiteral(Case caseStatement) {
@@ -275,27 +275,27 @@ class StatementsPrinter {
 	
 	def String generateFor(Loop loop)
 		'''
-		for («getLoopPart(loop.loopPart, LoopPartType.INITIALIZATION)
-		»; «getLoopPart(loop.loopPart, LoopPartType.CONDITION)
-		»; «getLoopPart(loop.loopPart, LoopPartType.UPDATER)»)
+		for (Â«getLoopPart(loop.loopPart, LoopPartType.INITIALIZATION)
+		Â»; Â«getLoopPart(loop.loopPart, LoopPartType.CONDITION)
+		Â»; Â«getLoopPart(loop.loopPart, LoopPartType.UPDATER)Â»)
 		{
-			«generateStatements(loop.codeBlock.statements)»
+			Â«generateStatements(loop.codeBlock.statements)Â»
 		}'''
 	
 	def String generateWhile(Loop loop)
 		'''
-		while («getLoopPart(loop.loopPart, LoopPartType.CONDITION)»)
+		while (Â«getLoopPart(loop.loopPart, LoopPartType.CONDITION)Â»)
 		{
-			«generateStatements(loop.codeBlock.statements)»
+			Â«generateStatements(loop.codeBlock.statements)Â»
 		}'''
 	
 	def String generateDoWhile(Loop loop)
 		'''
 		do
 		{
-			«generateStatements(loop.codeBlock.statements)»
+			Â«generateStatements(loop.codeBlock.statements)Â»
 		}
-		while («getLoopPart(loop.loopPart, LoopPartType.CONDITION)»)'''
+		while (Â«getLoopPart(loop.loopPart, LoopPartType.CONDITION)Â»)'''
 	
 	
 	def String getLoopPart(EList<LoopPart> loopParts, LoopPartType loopPartType)
@@ -317,7 +317,7 @@ class StatementsPrinter {
 	 * Expressions
 	 */
 	def dispatch String generateStatement(Expression expression) {
-		'''«generateStatement(expression.conditionalExpression.get(0))» «expression.type» «generateStatement(expression.conditionalExpression.get(1))»'''
+		'''Â«generateStatement(expression.conditionalExpression.get(0))Â» Â«expression.typeÂ» Â«generateStatement(expression.conditionalExpression.get(1))Â»'''
 	}
 	
 	/** 
@@ -326,38 +326,38 @@ class StatementsPrinter {
 	def dispatch String generateStatement(UnaryExpression unaryExpression) {
 		if (unaryExpression.type == "pre")
 		{
-			return '''«unaryExpression.operator»«generateStatement(unaryExpression.dataProducer)»'''
+			return '''Â«unaryExpression.operatorÂ»Â«generateStatement(unaryExpression.dataProducer)Â»'''
 		}
-		return '''«generateStatement(unaryExpression.dataProducer)»«unaryExpression.operator»'''
+		return '''Â«generateStatement(unaryExpression.dataProducer)Â»Â«unaryExpression.operatorÂ»'''
 	}
 	
 	/** 
 	 * Assign
 	 */
 	def dispatch String generateStatement(Assign assign)
-		'''«generateStatement(assign.variable)» «assign.type» «generateStatement(assign.inputs)»'''
+		'''Â«generateStatement(assign.variable)Â» Â«assign.typeÂ» Â«generateStatement(assign.inputs)Â»'''
 	
 	def dispatch String generateStatement(Variable variable)
-		'''«variable.name»'''
+		'''Â«variable.nameÂ»'''
 		
 	def dispatch String generateStatement(PropertyAssign propertyAssign)
-		'''«generateStatement(propertyAssign.variable)»«generateStatement(propertyAssign.property)» «propertyAssign.type» «generateStatement(propertyAssign.inputs)»'''
+		'''Â«generateStatement(propertyAssign.variable)Â»Â«generateStatement(propertyAssign.property)Â» Â«propertyAssign.typeÂ» Â«generateStatement(propertyAssign.inputs)Â»'''
 	
 	/** 
 	 * Variable Declaration
 	 */
 	def dispatch String generateStatement(VariableDeclaration variableDeclaration) 
 	{
-	    '''«variableDeclaration.kind» «variableDeclaration.variable.name»«
-		IF variableDeclaration.initialization !== null» = «generateStatement(variableDeclaration.initialization)
-		»«ENDIF»'''
+	    '''Â«variableDeclaration.kindÂ» Â«variableDeclaration.variable.nameÂ»Â«
+		IF variableDeclaration.initialization !== nullÂ» = Â«generateStatement(variableDeclaration.initialization)
+		Â»Â«ENDIFÂ»'''
 	}
 	
 	/** 
 	 * Return
 	 */
 	def dispatch String generateStatement(Return returnStatement)
-		'''return «generateStatement(returnStatement.dataProducers)»'''
+		'''return Â«generateStatement(returnStatement.dataProducers)Â»'''
 	
 	/** 
 	 * Call
@@ -365,19 +365,19 @@ class StatementsPrinter {
 	def dispatch String generateStatement(Call callStatement)
 	{	
 		if (callStatement.dataProducer !== null)
-			'''«generateStatement(callStatement.dataProducer)»(«generateArguments(callStatement.arguments)»)'''
+			'''Â«generateStatement(callStatement.dataProducer)Â»(Â«generateArguments(callStatement.arguments)Â»)'''
 		else
 		{
 			var String functionName = callStatement.name
 			if (callStatement.callableBlock !== null)
 				functionName = callStatement.callableBlock.name
 				
-			'''«functionName»(«generateArguments(callStatement.arguments)»)'''
+			'''Â«functionNameÂ»(Â«generateArguments(callStatement.arguments)Â»)'''
 		}
 	}
 		
 	def String generateArguments(EList<Argument> arguments)
-		'''«FOR a : arguments SEPARATOR ', '»«generateStatement(a.dataProducer)»«ENDFOR»'''
+		'''Â«FOR a : arguments SEPARATOR ', 'Â»Â«generateStatement(a.dataProducer)Â»Â«ENDFORÂ»'''
 		
 	
 	/** 
@@ -392,7 +392,7 @@ class StatementsPrinter {
 	 * Variable Read
 	 */
 	def dispatch String generateStatement(VariableAccess variableAccess)
-		'''«variableAccess.variable.name»'''
+		'''Â«variableAccess.variable.nameÂ»'''
 		
 	def dispatch String generateStatement(Property property)
 	{
@@ -400,28 +400,28 @@ class StatementsPrinter {
 		if (parent instanceof Code || parent instanceof CodeContainer)
 			return ""
 			
-		return '''«generateStatement(parent)».«property.name»'''
+		return '''Â«generateStatement(parent)Â».Â«property.nameÂ»'''
 	}
 	
 	def dispatch String generateStatement(PropertyAccess propertyAccess)
 	{
 		if (propertyAccess.nextAccess !== null)
-			'''«generateStatement(propertyAccess.nextAccess)».«propertyAccess.name»'''
+			'''Â«generateStatement(propertyAccess.nextAccess)Â».Â«propertyAccess.nameÂ»'''
 		else
-			'''«generateStatement(propertyAccess.dataProducer)».«propertyAccess.name»'''
+			'''Â«generateStatement(propertyAccess.dataProducer)Â».Â«propertyAccess.nameÂ»'''
 	}
 	
 	/** 
 	 * Simple Operation
 	 */
 	def dispatch String generateStatement(Operation operation)
-		'''«generateStatement(operation.dataProducers.get(0))» «operation.type» «generateStatement(operation.dataProducers.get(1))»'''
+		'''Â«generateStatement(operation.dataProducers.get(0))Â» Â«operation.typeÂ» Â«generateStatement(operation.dataProducers.get(1))Â»'''
 	
 	/** 
 	 * Literal
 	 */
 	def dispatch String generateStatement(Literal literal)
-		'''«literal.literal»'''
+		'''Â«literal.literalÂ»'''
 	/** 
 	 * Literal
 	 */
@@ -431,7 +431,7 @@ class StatementsPrinter {
 	 * Exceptions
 	 */
 	def dispatch String generateStatement(Throw throwStatement)
-		'''throw «generateStatement(throwStatement.dataProducer)»'''
+		'''throw Â«generateStatement(throwStatement.dataProducer)Â»'''
 		
 	/** 
 	 * Try
@@ -440,9 +440,9 @@ class StatementsPrinter {
 		'''
 		try 
 		{
-			«generateStatements(tryStatement.codeBlock)»
-		} «FOR c : tryStatement.catchs»«generateStatement(c)»«ENDFOR
-		»«IF tryStatement.^finally !== null»«generateStatement(tryStatement.^finally)»«ENDIF»'''
+			Â«generateStatements(tryStatement.codeBlock)Â»
+		} Â«FOR c : tryStatement.catchsÂ»Â«generateStatement(c)Â»Â«ENDFOR
+		Â»Â«IF tryStatement.^finally !== nullÂ»Â«generateStatement(tryStatement.^finally)Â»Â«ENDIFÂ»'''
 		
 	
 	/** 
@@ -450,9 +450,9 @@ class StatementsPrinter {
 	 */
 	def dispatch String generateStatement(Catch catchStatement) 
 		'''
-		catch («generateStatement(catchStatement.dataProducer)»)
+		catch (Â«generateStatement(catchStatement.dataProducer)Â»)
 		{
-			«generateStatements(catchStatement.codeBlock)»
+			Â«generateStatements(catchStatement.codeBlock)Â»
 		} '''
 		
 	/** 
@@ -462,6 +462,6 @@ class StatementsPrinter {
 		'''
 		finally
 		{
-			«generateStatements(finallyStatement.codeBlock)»
+			Â«generateStatements(finallyStatement.codeBlock)Â»
 		}'''
 }

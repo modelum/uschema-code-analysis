@@ -5,9 +5,9 @@ Bundle-SymbolicName: es.um.uschema.code.transfs.json2code
 Bundle-Version: 1.0.0.qualifier
 Export-Package: es.um.nosql.code.s13e.transfs.json2code.transf,
  es.um.nosql.code.s13e.transfs.json2code.transf.warnings
-Import-Package: es.um.nosql.code.s13e.metamodels.code,
- es.um.nosql.code.s13e.metamodels.code.utils,
- es.um.nosql.code.s13e.transfs.json2code.transf.warnings
+Import-Package: es.um.nosql.code.s13e.transfs.json2code.transf.warnings,
+ es.um.uschema.code.metamodels.code,
+ es.um.uschema.code.metamodels.code.utils
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.emf.ecore.xmi
 Automatic-Module-Name: es.um.nosql.code.s13e.transfs.json2code.transf

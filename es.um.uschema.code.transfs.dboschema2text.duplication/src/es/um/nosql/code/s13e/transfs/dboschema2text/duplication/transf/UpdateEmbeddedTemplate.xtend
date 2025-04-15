@@ -1,9 +1,9 @@
 package es.um.nosql.code.s13e.transfs.dboschema2text.duplication.transf
 
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Field
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.DataStructure
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Field
+import es.um.uschema.code.metamodels.databaseOperationsSchema.DataStructure
 import java.util.List
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Container
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Container
 
 class UpdateEmbeddedTemplate {
 		def applyTemplate(String sourceContainerName, String targetContainerName, Container targetContainer, DataStructure sourceDataStructure, 
@@ -17,12 +17,12 @@ class UpdateEmbeddedTemplate {
 		const client = new MongoClient(url, { useNewUrlParser: true });
 		client.connect(conErr => {
 		  const db = client.db(dbName);
-		  db.collection('«sourceContainerName»').find()
+		  db.collection('Â«sourceContainerNameÂ»').find()
 		    .forEach(source => {
-		      db.collection('«targetContainer.name»').updateMany(
-		        {«referenceField.name»: {$elemMatch: {«sourceFieldName»: source.«referredField.name»}}},
-		        {$set: {'«referenceField.name».$[it].«sourceContainerName.toLowerCase»_«duplicatedFieldList.get(0).name»': source.«duplicatedFieldList.get(0).name»}},
-		        {arrayFilters: [{"it.«sourceFieldName»": source.«referredField.name»}]}
+		      db.collection('Â«targetContainer.nameÂ»').updateMany(
+		        {Â«referenceField.nameÂ»: {$elemMatch: {Â«sourceFieldNameÂ»: source.Â«referredField.nameÂ»}}},
+		        {$set: {'Â«referenceField.nameÂ».$[it].Â«sourceContainerName.toLowerCaseÂ»_Â«duplicatedFieldList.get(0).nameÂ»': source.Â«duplicatedFieldList.get(0).nameÂ»}},
+		        {arrayFilters: [{"it.Â«sourceFieldNameÂ»": source.Â«referredField.nameÂ»}]}
 		      );
 		  })	
 		});

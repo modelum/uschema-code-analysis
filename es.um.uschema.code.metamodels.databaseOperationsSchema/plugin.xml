@@ -9,8 +9,8 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated databaseOperationsSchema -->
       <package
-            uri="http://es.um.nosql.code.s13e.metamodels/dboSchema"
-            class="es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.DatabaseOperationsSchemaPackage"
+            uri="http://es.um.uschema.code.metamodels/dboSchema"
+            class="es.um.uschema.code.metamodels.databaseOperationsSchema.DatabaseOperationsSchemaPackage"
             genModel="model/databaseOperationsSchema.genmodel"/>
    </extension>
 

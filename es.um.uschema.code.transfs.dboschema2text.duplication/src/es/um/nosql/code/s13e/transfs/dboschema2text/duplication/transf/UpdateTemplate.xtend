@@ -1,7 +1,7 @@
 package es.um.nosql.code.s13e.transfs.dboschema2text.duplication.transf
 
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.DataStructure
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Field
+import es.um.uschema.code.metamodels.databaseOperationsSchema.DataStructure
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Field
 import java.util.List
 
 class UpdateTemplate 
@@ -17,20 +17,20 @@ class UpdateTemplate
 		const client = new MongoClient(url, { useNewUrlParser: true });
 		client.connect(conErr = >{
 			const db = client.db(dbName);
-			db.collection('«sourceContainerName»').find()
+			db.collection('Â«sourceContainerNameÂ»').find()
 				.forEach(source => {	
-			        db.collection('«targetContainerName»').updateMany(
+			        db.collection('Â«targetContainerNameÂ»').updateMany(
 			            {
-			                «referenceField.name»: source.«referredField.name»
+			                Â«referenceField.nameÂ»: source.Â«referredField.nameÂ»
 			            }, {
-			                «insertType»: {
-			                	«IF duplicatedFieldList.size > 0»
-			                	«sourceContainerName»_«referenceField.name»: {
-			                		«FOR duplicatedField : duplicatedFieldList SEPARATOR ","»
-			                		«duplicatedField.name»: source.«duplicatedField.name»
-			                		«ENDFOR»
+			                Â«insertTypeÂ»: {
+			                	Â«IF duplicatedFieldList.size > 0Â»
+			                	Â«sourceContainerNameÂ»_Â«referenceField.nameÂ»: {
+			                		Â«FOR duplicatedField : duplicatedFieldList SEPARATOR ","Â»
+			                		Â«duplicatedField.nameÂ»: source.Â«duplicatedField.nameÂ»
+			                		Â«ENDFORÂ»
 			                	}
-			                	«ENDIF»
+			                	Â«ENDIFÂ»
 			                }
 			            }, { 
 			                multi: true,

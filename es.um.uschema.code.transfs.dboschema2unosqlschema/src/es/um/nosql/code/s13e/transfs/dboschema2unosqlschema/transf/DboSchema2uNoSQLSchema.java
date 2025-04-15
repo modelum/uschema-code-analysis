@@ -2,13 +2,13 @@ package es.um.nosql.code.s13e.transfs.dboschema2unosqlschema.transf;
 
 import java.io.File;
 
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.DatabaseOperationsSchema;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.utils.DatabaseOperationsSchemaReader;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.DatabaseOperationsSchema;
 import es.um.nosql.code.s13e.transfs.dboschema2unosqlschema.transf.builder.NoSQLSchemaBuilder;
 import es.um.nosql.code.s13e.transfs.dboschema2unosqlschema.transf.repositories.NoSQLSchemaRepository;
 import es.um.uschema.USchema.EntityType;
 import es.um.uschema.USchema.StructuralVariation;
 import es.um.uschema.USchema.USchema;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.utils.DatabaseOperationsSchemaReader;
 import es.um.uschema.utils.EcoreModelIO;
 
 public class DboSchema2uNoSQLSchema
@@ -37,14 +37,20 @@ public class DboSchema2uNoSQLSchema
 	{
 		USchema noSQLSchema = noSQLSchemaBuilder.createAndSaveNoSQLSchema("MongoDB");
 		dboSchemaModel.getContainers().forEach(c -> {
-			EntityType et = noSQLSchemaBuilder.createEntityTypeAndSave(c.getName());
-			c.getDataStructures().forEach(ds -> {
-				StructuralVariation sv = noSQLSchemaBuilder.createStructuralVariationAndSave(et);
-				ds.getFields().forEach(f -> {
-					if (f.getDuplicatedField() == null)
-						noSQLSchemaBuilder.createPropertyAndSave(f.getName(), f.getType(), sv);
+			if (c.getName() != null)
+				noSQLSchemaBuilder.createEntityTypeAndSave(c.getName(), true);
+		});
+		dboSchemaModel.getContainers().forEach(c -> {
+			if (c.getName() != null) {
+				EntityType et = noSQLSchemaBuilder.createEntityTypeAndSave(c.getName(), true);
+				c.getDataStructures().forEach(ds -> {
+					StructuralVariation sv = noSQLSchemaBuilder.createStructuralVariationAndSave(et);
+					ds.getFields().forEach(f -> {
+						if (f.getDuplicatedField() == null)
+							noSQLSchemaBuilder.createPropertyAndSave(f.getName(), f.getType(), sv);
+					});
 				});
-			});
+			}
 		});
 		
 		return noSQLSchema;

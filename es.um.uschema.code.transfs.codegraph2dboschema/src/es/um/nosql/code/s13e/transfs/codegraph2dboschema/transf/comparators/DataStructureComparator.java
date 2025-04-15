@@ -2,10 +2,10 @@ package es.um.nosql.code.s13e.transfs.codegraph2dboschema.transf.comparators;
 
 import java.util.List;
 
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.DataStructure;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Field;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Attribute;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Type;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.DataStructure;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Field;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Attribute;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Type;
 
 public class DataStructureComparator
 {
@@ -32,7 +32,7 @@ public class DataStructureComparator
 
 	private static boolean areFieldsEquals(Field f1, Field f2)
 	{
-		if (f1.getName().equals(f2.getName())) {
+		if (f1.getName() != null && f2.getName() != null && f1.getName().equals(f2.getName())) {
 			Type type1 = f1.getType();
 			Type type2 = f2.getType();
 			

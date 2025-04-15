@@ -3,10 +3,10 @@ package es.um.nosql.code.s13e.transfs.code2codegraph.transf.model.repository;
 import java.util.HashMap;
 import java.util.Map;
 
-import es.um.nosql.code.s13e.metamodels.code.CallableBlock;
-import es.um.nosql.code.s13e.metamodels.codeGraph.CodeGraph;
-import es.um.nosql.code.s13e.metamodels.codeGraph.CallableBlockSubGraph;
-import es.um.nosql.code.s13e.metamodels.codeGraph.CodeBlockSubGraph;
+import es.um.uschema.code.metamodels.codeGraph.CodeGraph;
+import es.um.uschema.code.metamodels.code.CallableBlock;
+import es.um.uschema.code.metamodels.codeGraph.CallableBlockSubGraph;
+import es.um.uschema.code.metamodels.codeGraph.CodeBlockSubGraph;
 
 public class CodeGraphModelRepository
 {
@@ -31,7 +31,7 @@ public class CodeGraphModelRepository
 		return application;
 	}
 
-	public void saveCallableBlockSubGraph(CallableBlockSubGraph callableBlockFlow)
+	public CallableBlockSubGraph saveCallableBlockSubGraph(CallableBlockSubGraph callableBlockFlow)
 	{
 		CallableBlock callableBlock = callableBlockFlow.getCallableBlock();
 
@@ -40,6 +40,7 @@ public class CodeGraphModelRepository
 			callableBlockFlows.put(callableBlock, callableBlockFlow);
 			application.getSubGrahps().add(callableBlockFlow);
 		}
+		return callableBlockFlows.get(callableBlock);
 	}
 
 	public void saveCodeBlockSubGraph(CodeBlockSubGraph codeBlockFlow)

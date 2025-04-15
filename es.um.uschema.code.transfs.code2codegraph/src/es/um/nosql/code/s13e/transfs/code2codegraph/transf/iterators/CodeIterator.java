@@ -4,27 +4,27 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 
-import es.um.nosql.code.s13e.metamodels.code.CallableBlock;
-import es.um.nosql.code.s13e.metamodels.code.Code;
-import es.um.nosql.code.s13e.metamodels.code.CodeBlock;
-import es.um.nosql.code.s13e.metamodels.code.CodeBlockType;
-import es.um.nosql.code.s13e.metamodels.code.CodeContainer;
-import es.um.nosql.code.s13e.metamodels.code.ConditionalExpression;
-import es.um.nosql.code.s13e.metamodels.code.Container;
-import es.um.nosql.code.s13e.metamodels.code.DataProducer;
-import es.um.nosql.code.s13e.metamodels.code.Expression;
-import es.um.nosql.code.s13e.metamodels.code.Parameter;
-import es.um.nosql.code.s13e.metamodels.code.Return;
-import es.um.nosql.code.s13e.metamodels.code.Statement;
-import es.um.nosql.code.s13e.metamodels.codeGraph.CodeBlockSubGraph;
-import es.um.nosql.code.s13e.metamodels.codeGraph.CodeSubGraph;
-import es.um.nosql.code.s13e.metamodels.codeGraph.EdgeType;
-import es.um.nosql.code.s13e.metamodels.codeGraph.Node;
-import es.um.nosql.code.s13e.metamodels.codeGraph.NodeType;
+import es.um.uschema.code.metamodels.codeGraph.CodeBlockSubGraph;
+import es.um.uschema.code.metamodels.codeGraph.CodeSubGraph;
+import es.um.uschema.code.metamodels.codeGraph.EdgeType;
+import es.um.uschema.code.metamodels.codeGraph.Node;
+import es.um.uschema.code.metamodels.codeGraph.NodeType;
 import es.um.nosql.code.s13e.transfs.code2codegraph.transf.analyzers.CodeAnalyzer;
 import es.um.nosql.code.s13e.transfs.code2codegraph.transf.builders.CodeGraphBuilder;
 import es.um.nosql.code.s13e.transfs.code2codegraph.transf.model.repository.CallHierarchy;
 import es.um.nosql.code.s13e.transfs.code2codegraph.transf.model.repository.CodeGraphModelRepository;
+import es.um.uschema.code.metamodels.code.CallableBlock;
+import es.um.uschema.code.metamodels.code.Code;
+import es.um.uschema.code.metamodels.code.CodeBlock;
+import es.um.uschema.code.metamodels.code.CodeBlockType;
+import es.um.uschema.code.metamodels.code.CodeContainer;
+import es.um.uschema.code.metamodels.code.ConditionalExpression;
+import es.um.uschema.code.metamodels.code.Container;
+import es.um.uschema.code.metamodels.code.DataProducer;
+import es.um.uschema.code.metamodels.code.Expression;
+import es.um.uschema.code.metamodels.code.Parameter;
+import es.um.uschema.code.metamodels.code.Return;
+import es.um.uschema.code.metamodels.code.Statement;
 
 public class CodeIterator
 { 
@@ -96,11 +96,11 @@ public class CodeIterator
 			Node lastNode)
 	{
 		endNode = codeGraphBuilder.createEndNode();
+		callableBlockSubGraph.getNodes().add(endNode);
 		saveLastFunctionNode(callableBlock, endNode);
 		lastNode = iterateStatementsWithReturn(callableBlockSubGraph, lastNode, callableBlock.getStatements(), endNode);
 //		if (lastNode.getOutgoingEdges().size() == 0) {
 		codeGraphBuilder.createEdge(lastNode, endNode, EdgeType.NEXT);
-		callableBlockSubGraph.getNodes().add(endNode);
 //		}
 	}
 

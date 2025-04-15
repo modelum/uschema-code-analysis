@@ -3,11 +3,11 @@ package es.um.nosql.code.s13e.transfs.json2code.transf.model.repository;
 import java.util.HashMap;
 import java.util.Map;
 
-import es.um.nosql.code.s13e.metamodels.code.Code;
-import es.um.nosql.code.s13e.metamodels.code.CodeContainer;
-import es.um.nosql.code.s13e.metamodels.code.CodeFactory;
-import es.um.nosql.code.s13e.metamodels.code.DataContainer;
-import es.um.nosql.code.s13e.metamodels.code.PrimitiveType;
+import es.um.uschema.code.metamodels.code.Code;
+import es.um.uschema.code.metamodels.code.CodeContainer;
+import es.um.uschema.code.metamodels.code.CodeFactory;
+import es.um.uschema.code.metamodels.code.DataContainer;
+import es.um.uschema.code.metamodels.code.PrimitiveType;
 
 public class TypesRepository
 {

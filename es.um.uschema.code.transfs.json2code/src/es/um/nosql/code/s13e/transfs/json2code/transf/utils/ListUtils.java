@@ -6,8 +6,8 @@ import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.json.JSONObject;
 
-import es.um.nosql.code.s13e.metamodels.code.Statement;
 import es.um.nosql.code.s13e.transfs.json2code.transf.warnings.WarningRepository;
+import es.um.uschema.code.metamodels.code.Statement;
 
 public class ListUtils
 {

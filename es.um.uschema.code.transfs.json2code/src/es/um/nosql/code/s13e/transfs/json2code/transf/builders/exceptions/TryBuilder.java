@@ -4,18 +4,18 @@ import java.util.List;
 
 import org.json.JSONObject;
 
-import es.um.nosql.code.s13e.metamodels.code.Catch;
-import es.um.nosql.code.s13e.metamodels.code.CodeBlock;
-import es.um.nosql.code.s13e.metamodels.code.CodeFactory;
-import es.um.nosql.code.s13e.metamodels.code.Finally;
-import es.um.nosql.code.s13e.metamodels.code.Statement;
-import es.um.nosql.code.s13e.metamodels.code.Try;
 import es.um.nosql.code.s13e.transfs.json2code.transf.analyzers.JSONAnalyzer;
 import es.um.nosql.code.s13e.transfs.json2code.transf.builders.StatementBuilder;
 import es.um.nosql.code.s13e.transfs.json2code.transf.builders.location.LocationBuilder;
 import es.um.nosql.code.s13e.transfs.json2code.transf.model.repository.CodeModelRepository;
 import es.um.nosql.code.s13e.transfs.json2code.transf.utils.ListUtils;
 import es.um.nosql.code.s13e.transfs.json2code.transf.warnings.WarningRepository;
+import es.um.uschema.code.metamodels.code.Catch;
+import es.um.uschema.code.metamodels.code.CodeBlock;
+import es.um.uschema.code.metamodels.code.CodeFactory;
+import es.um.uschema.code.metamodels.code.Finally;
+import es.um.uschema.code.metamodels.code.Statement;
+import es.um.uschema.code.metamodels.code.Try;
 
 public class TryBuilder extends StatementBuilder
 {

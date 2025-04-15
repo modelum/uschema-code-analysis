@@ -2,17 +2,17 @@ package es.um.nosql.code.s13e.transfs.json2code.transf;
 
 import org.json.JSONObject;
 
-import es.um.nosql.code.s13e.metamodels.code.Code;
-import es.um.nosql.code.s13e.metamodels.code.CodeBlock;
-import es.um.nosql.code.s13e.metamodels.code.CodeBlockType;
-import es.um.nosql.code.s13e.metamodels.code.CodeContainerType;
-import es.um.nosql.code.s13e.metamodels.code.ContainerType;
-import es.um.nosql.code.s13e.metamodels.code.utils.CodeWriter;
 import es.um.nosql.code.s13e.transfs.json2code.transf.analyzers.JSONAnalyzer;
 import es.um.nosql.code.s13e.transfs.json2code.transf.builders.ContainersBuilder;
 import es.um.nosql.code.s13e.transfs.json2code.transf.iterators.JSONFileIterator;
 import es.um.nosql.code.s13e.transfs.json2code.transf.model.repository.CodeModelRepository;
 import es.um.nosql.code.s13e.transfs.json2code.transf.warnings.WarningRepository;
+import es.um.uschema.code.metamodels.code.Code;
+import es.um.uschema.code.metamodels.code.CodeBlock;
+import es.um.uschema.code.metamodels.code.CodeBlockType;
+import es.um.uschema.code.metamodels.code.CodeContainerType;
+import es.um.uschema.code.metamodels.code.ContainerType;
+import es.um.uschema.code.metamodels.code.utils.CodeWriter;
 
 public class Json2Code
 {

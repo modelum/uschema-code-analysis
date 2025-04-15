@@ -41,7 +41,7 @@ public class Launcher
 	private static final String CODE_TEXT_FOLDER = OUTPUTS_FOLDER + "tests/code/";
 	private static final String NEO4J_SCRIPT = OUTPUTS_FOLDER + "tests/codeGraph/neo4j/neo4j.script";
 
-	private static final boolean DEBUG = true;
+	private static final boolean DEBUG = false;
 
 
 	private int transformationNumber;
@@ -67,9 +67,8 @@ public class Launcher
 		
 		launcher.dboSchema2uNoSQLSchema(USER_DIR + DBOSCHEMA_FOLDER + DBOSCHEMA_MODEL_NAME, USER_DIR + NOSQLSCHEMA_MODEL_FOLDER + NOSQLSCHEMA_MODEL_NAME);
 
-		launcher.dboSchema2updateText(USER_DIR + DBOSCHEMA_FOLDER + DBOSCHEMA_MODEL_NAME, USER_DIR + DUPLICATION_UPDATES_FOLDER);
-
-		launcher.dboSchema2rewriteCodeText(USER_DIR + DBOSCHEMA_FOLDER + DBOSCHEMA_MODEL_NAME, USER_DIR + REWRITE_FOLDER + CODE_REWRITTEN_MODEL_XMI, USER_DIR + REWRITE_FOLDER + REWRITTEN_CODE_FOLDER);
+		if (DEBUG)
+			launcher.dboSchema2rewriteCodeText(USER_DIR + DBOSCHEMA_FOLDER + DBOSCHEMA_MODEL_NAME, USER_DIR + REWRITE_FOLDER + CODE_REWRITTEN_MODEL_XMI, USER_DIR + REWRITE_FOLDER + REWRITTEN_CODE_FOLDER);
 
 		System.out.println("\nFinished\n");
 	}

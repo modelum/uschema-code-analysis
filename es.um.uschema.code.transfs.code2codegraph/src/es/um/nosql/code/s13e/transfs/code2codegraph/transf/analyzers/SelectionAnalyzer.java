@@ -1,12 +1,12 @@
 package es.um.nosql.code.s13e.transfs.code2codegraph.transf.analyzers;
 
-import es.um.nosql.code.s13e.metamodels.code.Case;
-import es.um.nosql.code.s13e.metamodels.code.Selection;
-import es.um.nosql.code.s13e.metamodels.codeGraph.CodeSubGraph;
-import es.um.nosql.code.s13e.metamodels.codeGraph.EdgeType;
-import es.um.nosql.code.s13e.metamodels.codeGraph.Node;
+import es.um.uschema.code.metamodels.codeGraph.CodeSubGraph;
+import es.um.uschema.code.metamodels.codeGraph.EdgeType;
+import es.um.uschema.code.metamodels.codeGraph.Node;
 import es.um.nosql.code.s13e.transfs.code2codegraph.transf.builders.CodeGraphBuilder;
 import es.um.nosql.code.s13e.transfs.code2codegraph.transf.iterators.CodeIterator;
+import es.um.uschema.code.metamodels.code.Case;
+import es.um.uschema.code.metamodels.code.Selection;
 
 public class SelectionAnalyzer
 {

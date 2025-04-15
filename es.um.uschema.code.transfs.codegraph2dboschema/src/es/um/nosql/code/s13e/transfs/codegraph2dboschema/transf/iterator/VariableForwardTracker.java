@@ -6,24 +6,24 @@ import java.util.stream.Collectors;
 
 import org.eclipse.emf.common.util.EList;
 
-import es.um.nosql.code.s13e.metamodels.code.Call;
-import es.um.nosql.code.s13e.metamodels.code.ConditionalExpression;
-import es.um.nosql.code.s13e.metamodels.code.DataContainer;
-import es.um.nosql.code.s13e.metamodels.code.DataProducer;
-import es.um.nosql.code.s13e.metamodels.code.Expression;
-import es.um.nosql.code.s13e.metamodels.code.IndexBasedAccess;
-import es.um.nosql.code.s13e.metamodels.code.Literal;
-import es.um.nosql.code.s13e.metamodels.code.NewDataContainer;
-import es.um.nosql.code.s13e.metamodels.code.Operation;
-import es.um.nosql.code.s13e.metamodels.code.PropertyAccess;
-import es.um.nosql.code.s13e.metamodels.code.Statement;
-import es.um.nosql.code.s13e.metamodels.code.Variable;
-import es.um.nosql.code.s13e.metamodels.code.VariableAccess;
-import es.um.nosql.code.s13e.metamodels.codeGraph.Edge;
-import es.um.nosql.code.s13e.metamodels.codeGraph.Node;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Attribute;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.DatabaseOperationsSchemaFactory;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Type;
+import es.um.uschema.code.metamodels.codeGraph.Edge;
+import es.um.uschema.code.metamodels.codeGraph.Node;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Attribute;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.DatabaseOperationsSchemaFactory;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Type;
+import es.um.uschema.code.metamodels.code.Call;
+import es.um.uschema.code.metamodels.code.ConditionalExpression;
+import es.um.uschema.code.metamodels.code.DataContainer;
+import es.um.uschema.code.metamodels.code.DataProducer;
+import es.um.uschema.code.metamodels.code.Expression;
+import es.um.uschema.code.metamodels.code.IndexBasedAccess;
+import es.um.uschema.code.metamodels.code.Literal;
+import es.um.uschema.code.metamodels.code.NewDataContainer;
+import es.um.uschema.code.metamodels.code.Operation;
+import es.um.uschema.code.metamodels.code.PropertyAccess;
+import es.um.uschema.code.metamodels.code.Statement;
+import es.um.uschema.code.metamodels.code.Variable;
+import es.um.uschema.code.metamodels.code.VariableAccess;
 
 public class VariableForwardTracker extends ForwardTracker
 {

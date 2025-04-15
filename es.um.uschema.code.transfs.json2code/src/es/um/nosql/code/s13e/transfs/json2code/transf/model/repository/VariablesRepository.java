@@ -8,10 +8,10 @@ import java.util.Map;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
-import es.um.nosql.code.s13e.metamodels.code.CodeBlock;
-import es.um.nosql.code.s13e.metamodels.code.CodeContainer;
-import es.um.nosql.code.s13e.metamodels.code.CodeFactory;
-import es.um.nosql.code.s13e.metamodels.code.Variable;
+import es.um.uschema.code.metamodels.code.CodeBlock;
+import es.um.uschema.code.metamodels.code.CodeContainer;
+import es.um.uschema.code.metamodels.code.CodeFactory;
+import es.um.uschema.code.metamodels.code.Variable;
 
 public class VariablesRepository {
 

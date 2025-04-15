@@ -4,9 +4,8 @@ Bundle-Name: Launcher
 Bundle-SymbolicName: es.um.uschema.code.transfs.launcher
 Bundle-Version: 1.0.0.qualifier
 Export-Package: es.um.nosql.code.s13e.transfs.launcher
-Import-Package: es.um.nosql.code.s13e.metamodels.code,
- es.um.nosql.code.s13e.metamodels.codeGraph,
- es.um.nosql.code.s13e.metamodels.databaseOperationsSchema,
+Import-Package: es.um.uschema.code.metamodels.codeGraph,
+ es.um.uschema.code.metamodels.databaseOperationsSchema,
  es.um.nosql.code.s13e.transfs.code2codegraph.transf,
  es.um.nosql.code.s13e.transfs.code2text.javascript.transf,
  es.um.nosql.code.s13e.transfs.codegraph2dboschema.transf,
@@ -15,7 +14,8 @@ Import-Package: es.um.nosql.code.s13e.metamodels.code,
  es.um.nosql.code.s13e.transfs.dboschema2text.duplication.transf,
  es.um.nosql.code.s13e.transfs.dboschema2unosqlschema.transf,
  es.um.nosql.code.s13e.transfs.json2code.transf,
- es.um.nosql.code.s13e.transfs.text2json.transf
+ es.um.nosql.code.s13e.transfs.text2json.transf,
+ es.um.uschema.code.metamodels.code
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.emf.ecore.xmi
 Automatic-Module-Name: es.um.nosql.code.s13e.transfs.launcher

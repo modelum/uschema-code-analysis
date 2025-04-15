@@ -5,12 +5,12 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import es.um.nosql.code.s13e.metamodels.code.CallableBlock;
-import es.um.nosql.code.s13e.metamodels.code.CodeFactory;
-import es.um.nosql.code.s13e.metamodels.code.Parameter;
-import es.um.nosql.code.s13e.metamodels.code.Statement;
 import es.um.nosql.code.s13e.transfs.json2code.transf.analyzers.JSONAnalyzer;
 import es.um.nosql.code.s13e.transfs.json2code.transf.warnings.WarningRepository;
+import es.um.uschema.code.metamodels.code.CallableBlock;
+import es.um.uschema.code.metamodels.code.CodeFactory;
+import es.um.uschema.code.metamodels.code.Parameter;
+import es.um.uschema.code.metamodels.code.Statement;
 
 public class FunctionPartsBuilder
 {

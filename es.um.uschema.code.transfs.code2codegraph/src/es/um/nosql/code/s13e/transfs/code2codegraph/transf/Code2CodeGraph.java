@@ -1,12 +1,12 @@
 package es.um.nosql.code.s13e.transfs.code2codegraph.transf;
 
-import es.um.nosql.code.s13e.metamodels.code.Code;
-import es.um.nosql.code.s13e.metamodels.code.utils.CodeReader;
-import es.um.nosql.code.s13e.metamodels.codeGraph.utils.CodeGraphWriter;
 import es.um.nosql.code.s13e.transfs.code2codegraph.transf.analyzers.CodeAnalyzer;
 import es.um.nosql.code.s13e.transfs.code2codegraph.transf.builders.CodeGraphBuilder;
 import es.um.nosql.code.s13e.transfs.code2codegraph.transf.iterators.CodeIterator;
 import es.um.nosql.code.s13e.transfs.code2codegraph.transf.model.repository.CodeGraphModelRepository;
+import es.um.uschema.code.metamodels.code.Code;
+import es.um.uschema.code.metamodels.code.utils.CodeReader;
+import es.um.uschema.code.metamodels.codeGraph.utils.CodeGraphWriter;
 
 public class Code2CodeGraph 
 {

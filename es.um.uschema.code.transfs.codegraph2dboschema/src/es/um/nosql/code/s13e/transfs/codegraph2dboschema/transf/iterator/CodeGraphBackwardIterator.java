@@ -9,7 +9,7 @@ import static es.um.nosql.code.s13e.transfs.codegraph2dboschema.transf.constants
 import static es.um.nosql.code.s13e.transfs.codegraph2dboschema.transf.constants.ConstantsDBSchema.INSERT_ONE;
 import static es.um.nosql.code.s13e.transfs.codegraph2dboschema.transf.constants.ConstantsDBSchema.NAMES;
 import static es.um.nosql.code.s13e.transfs.codegraph2dboschema.transf.constants.ConstantsDBSchema.UPDATE;
-import static es.um.nosql.code.s13e.transfs.codegraph2dboschema.transf.constants.ConstantsDBSchema.UPDATE_ONE;
+import static es.um.nosql.code.s13e.transfs.codegraph2dboschema.transf.constants.ConstantsDBSchema.FIND_ONE_UPDATE_ONE;
 
 import java.util.HashMap;
 import java.util.List;
@@ -20,40 +20,41 @@ import java.util.stream.Collectors;
 
 import org.eclipse.emf.common.util.EList;
 
-import es.um.nosql.code.s13e.metamodels.code.Argument;
-import es.um.nosql.code.s13e.metamodels.code.Assignable;
-import es.um.nosql.code.s13e.metamodels.code.Call;
-import es.um.nosql.code.s13e.metamodels.code.DataContainer;
-import es.um.nosql.code.s13e.metamodels.code.DataProducer;
-import es.um.nosql.code.s13e.metamodels.code.IndexBasedAccess;
-import es.um.nosql.code.s13e.metamodels.code.Literal;
-import es.um.nosql.code.s13e.metamodels.code.NewArray;
-import es.um.nosql.code.s13e.metamodels.code.NewDataContainer;
-import es.um.nosql.code.s13e.metamodels.code.Operation;
-import es.um.nosql.code.s13e.metamodels.code.Property;
-import es.um.nosql.code.s13e.metamodels.code.PropertyAccess;
-import es.um.nosql.code.s13e.metamodels.code.Statement;
-import es.um.nosql.code.s13e.metamodels.code.Variable;
-import es.um.nosql.code.s13e.metamodels.code.VariableAccess;
-import es.um.nosql.code.s13e.metamodels.code.VariableDeclaration;
-import es.um.nosql.code.s13e.metamodels.codeGraph.CodeGraph;
-import es.um.nosql.code.s13e.metamodels.codeGraph.Node;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Composition;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Container;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.DataStructure;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.DatabaseOperation;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Delete;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Field;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Insert;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.OperationParameter;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Read;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Reference;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Type;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Update;
+import es.um.uschema.code.metamodels.codeGraph.CodeGraph;
+import es.um.uschema.code.metamodels.codeGraph.Node;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Composition;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Container;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.DataStructure;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.DatabaseOperation;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Delete;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Field;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Insert;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.OperationParameter;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Read;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Reference;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Type;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Update;
 import es.um.nosql.code.s13e.transfs.codegraph2dboschema.transf.builder.DBOSchemaBuilder;
 import es.um.nosql.code.s13e.transfs.codegraph2dboschema.transf.model.repository.DBOSchemaRepository;
 import es.um.nosql.code.s13e.transfs.codegraph2dboschema.transf.utils.StringUtils;
 import es.um.nosql.code.s13e.transfs.codegraph2dboschema.transf.utils.TypeUtils;
+import es.um.uschema.code.metamodels.code.Argument;
+import es.um.uschema.code.metamodels.code.Assignable;
+import es.um.uschema.code.metamodels.code.Call;
+import es.um.uschema.code.metamodels.code.DataContainer;
+import es.um.uschema.code.metamodels.code.DataProducer;
+import es.um.uschema.code.metamodels.code.IndexBasedAccess;
+import es.um.uschema.code.metamodels.code.Literal;
+import es.um.uschema.code.metamodels.code.NewArray;
+import es.um.uschema.code.metamodels.code.NewDataContainer;
+import es.um.uschema.code.metamodels.code.Operation;
+import es.um.uschema.code.metamodels.code.Parameter;
+import es.um.uschema.code.metamodels.code.Property;
+import es.um.uschema.code.metamodels.code.PropertyAccess;
+import es.um.uschema.code.metamodels.code.Statement;
+import es.um.uschema.code.metamodels.code.Variable;
+import es.um.uschema.code.metamodels.code.VariableAccess;
+import es.um.uschema.code.metamodels.code.VariableDeclaration;
 
 public class CodeGraphBackwardIterator
 {
@@ -148,7 +149,7 @@ public class CodeGraphBackwardIterator
 			delete.setContainer(container);
 			processFindOrDeleteCall(delete, call, node);
 			return delete;
-		} else if (UPDATE_ONE.equals(call.getName()) || UPDATE.equals(call.getName()))
+		} else if (FIND_ONE_UPDATE_ONE.equals(call.getName()) || UPDATE.equals(call.getName()))
 		{
 			Update update = dboSchemaBuilder.createUpdate(call);
 			Container container = dboSchemaBuilder.createContainer(collectionName);
@@ -162,7 +163,7 @@ public class CodeGraphBackwardIterator
 			Container container = dboSchemaBuilder.createContainer(collectionName);
 			read.setContainer(container);
 			createFromNewArray((Call) read.getStatement());
-			processAggregateFields(read);
+			processAggregateFields(read, 0);
 			
 			return read;
 		} 
@@ -170,13 +171,15 @@ public class CodeGraphBackwardIterator
 		return null;
 	}
 
-	private void processAggregateFields(Read read)
+	private void processAggregateFields(Read read, int next)
 	{
-		String from = aggregateFields.get("from");
+
+		String from = aggregateFields.get(next > 0 ? "from" + next: "from");
 		Container targetContainer = dboSchemaBuilder.createContainer(from);
 		DataStructure targetDataStructure = dboSchemaBuilder.createDataStructure(targetContainer);
 		targetContainer.getDataStructures().add(targetDataStructure);
-		String foreignField = aggregateFields.get("foreignField");
+		
+		String foreignField = aggregateFields.get(next > 0 ? "foreignField" + next : "foreignField");
 		
 		Optional<Field> findField = targetDataStructure.getFields().stream().filter(f -> f.getName().equals(foreignField)).findAny();
 		Field targetField = null;
@@ -186,16 +189,22 @@ public class CodeGraphBackwardIterator
 			targetField = dboSchemaBuilder.createField(foreignField);
 			targetDataStructure.getFields().add(targetField);
 		}
+
+		createLocalFields(read, targetContainer, targetField, next);
 		
-		createLocalFields(read, targetContainer, targetField);
+		next++;
+		if (aggregateFields.containsKey("from" + next) && aggregateFields.containsKey("foreignField" + next)) {
+			processAggregateFields(read, next);
+		}
+		
 	}
 
-	private void createLocalFields(Read read, Container targetContainer, Field targetField)
+	private void createLocalFields(Read read, Container targetContainer, Field targetField, int next)
 	{
 		DataStructure resultDataStructure =  dboSchemaBuilder.createDataStructure(read.getContainer());
 		read.getContainer().getDataStructures().add(resultDataStructure);
 		read.setResultDataStructure(resultDataStructure);
-		String localField = aggregateFields.get("localField");
+		String localField = aggregateFields.get(next > 0 ? "localField" + next : "localField");
 		Field referenceField = dboSchemaBuilder.createField(localField);
 		Reference reference = dboSchemaBuilder.createReference(targetContainer, targetField);
 		if (aggregateFields.containsKey("$unwind")) {
@@ -250,7 +259,10 @@ public class CodeGraphBackwardIterator
 		for (Property property : dataContainer.getProperties())
 		{
 			Optional<Field> optionalField = dataStructure.getFields().stream()
-					.filter(f -> f.getName().equals(property.getName()))
+					.filter(f -> f.getName() != null &&
+						(!f.getName().equals("_id") && property.getName().equals("_id") ||
+						(f.getName().equals(property.getName())))
+					)
 					.findFirst();
 			if (optionalField.isPresent()) {
 				opeationParameter.getParameterFields().add(optionalField.get());
@@ -300,10 +312,22 @@ public class CodeGraphBackwardIterator
 			Assignable initialization = variableDeclaration.getInitialization();
 			if (initialization instanceof NewDataContainer) 
 			{
-				dataStructure = createDataStructureFromNewDataContainer((NewDataContainer) initialization, container, node);
+				NewDataContainer newDataContainer = (NewDataContainer) initialization;
+				dataStructure = createDataStructureFromNewDataContainer(newDataContainer.getDataContainer(), container, node);
 				propertyAssignsTracker.trackPropertyAssigns(variableDeclaration.getVariable(), node, dataStructure);
 				dataStructure = dboSchemaBuilder.getUniqueDataStructure(dataStructure);
 			}
+		} else if (tracked instanceof Parameter) {
+			Parameter parameter = (Parameter) tracked;
+			if (parameter.getType() instanceof DataContainer) {
+				DataContainer dataContainer = (DataContainer) parameter.getType();
+				dataStructure = createDataStructureFromNewDataContainer(dataContainer, container, node);	
+				propertyAssignsTracker.trackPropertyAssigns(parameter, node, dataStructure);
+				dataStructure = dboSchemaBuilder.getUniqueDataStructure(dataStructure);				
+			}
+		}
+		else {
+			dataStructure = createDataStructure(container, node);		
 		}
 		
 		return dataStructure;
@@ -338,7 +362,12 @@ public class CodeGraphBackwardIterator
 			Assignable initialization = property.getInitialization();
 			if (initialization instanceof Literal) {
 				Literal literal = (Literal) initialization;
-				aggregateFields.put(property.getName(), StringUtils.cleanLiteralString(literal.getLiteral()));
+				if (aggregateFields.containsKey(property.getName())) {
+					aggregateFields.put(property.getName() + 1, StringUtils.cleanLiteralString(literal.getLiteral()));					
+				}
+				else {					
+					aggregateFields.put(property.getName(), StringUtils.cleanLiteralString(literal.getLiteral()));
+				}
 			} else if (property instanceof DataContainer) {
 				aggregateFields.put(property.getName(), "dataContainer");
 				processDataContainer((DataContainer) property);
@@ -346,19 +375,36 @@ public class CodeGraphBackwardIterator
 		}
 	}
 
-	private DataStructure createDataStructure(NewDataContainer newDataContainer, Container container, Node node)
-	{
-		DataStructure dataStructure = createDataStructureFromNewDataContainer(newDataContainer, container, node);
+
+	private DataStructure createDataStructure(Container container, Node node) {
+		DataStructure dataStructure = dboSchemaBuilder.createDataStructure(container);
 		dataStructure = dboSchemaBuilder.getUniqueDataStructure(dataStructure);
 		
 		return dataStructure;
 	}
 	
-
-	private DataStructure createDataStructureFromNewDataContainer(NewDataContainer newDataContainer, Container container, Node node)
+	private DataStructure createDataStructure(NewDataContainer newDataContainer, Container container, Node node)
 	{
-		DataContainer dataContainer = newDataContainer.getDataContainer();
+		DataStructure dataStructure = createDataStructureFromNewDataContainer(newDataContainer.getDataContainer(), container, node);
+		dataStructure = dboSchemaBuilder.getUniqueDataStructure(dataStructure);
+		
+		return dataStructure;
+	}
+
+
+	private DataStructure createDataStructureFromNewDataContainer(DataContainer dataContainer, Container container, Node node)
+	{
 		DataStructure dataStructure = dboSchemaBuilder.createDataStructure(container);
+		propertiesToFields(node, dataStructure, dataContainer, container);
+		
+		return dataStructure;
+	}
+
+	private DataStructure createDataStructureForComposition(DataContainer dataContainer, Container container, Node node)
+	{
+		DataStructure dataStructure = dboSchemaBuilder.createDataStructure();
+		container.getDataStructures().add(dataStructure);
+		dataStructure.setContainer(container);
 		propertiesToFields(node, dataStructure, dataContainer, container);
 		
 		return dataStructure;
@@ -369,7 +415,7 @@ public class CodeGraphBackwardIterator
 		dataContainer.getProperties().forEach(p -> {
 			if (!SET.equals(p.getName())) {
 				createField(node, dataStructure, container, p);
-			} else  if (p instanceof DataContainer) { // Ignore $set
+			} else if (p instanceof DataContainer) { // Ignore $set
 				propertiesToFields(node, dataStructure, (DataContainer) p, container);
 			}
 		});
@@ -377,23 +423,23 @@ public class CodeGraphBackwardIterator
 
 	public void createField(Node node, DataStructure dataStructure, Container container, Property p)
 	{
-		if (!dataStructure.getFields().stream().filter(f -> f.getName().equals(p.getName())).findAny().isPresent()) {
+		if (!dataStructure.getFields().stream().filter(f -> f.getName() != null && f.getName().equals(p.getName())).findAny().isPresent()) {
 			Field field = dboSchemaBuilder.createField(p.getName());
 			dataStructure.getFields().add(field);
 			
-			es.um.nosql.code.s13e.metamodels.code.Type type = p.getType();
+			es.um.uschema.code.metamodels.code.Type type = p.getType();
 			if (type != null) {
 				field.setType(TypeUtils.getType(p.getType(), dboSchemaBuilder));
-			} else if (p.getInitialization() != null) {
-				field.setType(generateType(node, container, p.getInitialization()));
-			} else  if (p instanceof DataContainer) 
-			{
+			} 
+			else if (p instanceof DataContainer) {
 				DataStructure insideDataStructure = dboSchemaBuilder.createDataStructure();
 				Composition composition = dboSchemaBuilder.createComposition(insideDataStructure);
 				field.setType(composition);
 				propertiesToFields(node, insideDataStructure, (DataContainer) p, null);
-			} 
-		}
+			} else if (p.getInitialization() != null) {
+				field.setType(generateType(node, container, p.getInitialization()));
+			}
+		} 
 	}
 
 	private Type generateType(Node node, Container container, Assignable initialization)
@@ -407,9 +453,11 @@ public class CodeGraphBackwardIterator
 			generatedType = processOperation(node, container, initialization, generatedType);
 		} else if (initialization instanceof NewDataContainer) {
 			generatedType = processNewDataContainer(node, container, initialization);
+		} else if (initialization instanceof NewArray) {
+			generatedType = processNewArray(node, container, initialization);
 		} else if (initialization instanceof PropertyAccess) {
 			generatedType = processPropertyAccess(node, (PropertyAccess) initialization);
-		}
+		} 
 		
 		return generatedType;
 	}
@@ -418,10 +466,29 @@ public class CodeGraphBackwardIterator
 	{
 		Type generatedType;
 		NewDataContainer newDataContainer = (NewDataContainer) initialization;
-		DataStructure dataStructure = createDataStructureFromNewDataContainer(newDataContainer, container, node);
+		DataStructure dataStructure = createDataStructureForComposition(newDataContainer.getDataContainer(), container, node);
 		
 		generatedType = dboSchemaBuilder.createComposition(dataStructure);
 		return generatedType;
+	}
+	
+	private Type processNewArray(Node node, Container container, Assignable initialization)
+	{
+		Type generatedType;
+		NewArray newArray = (NewArray) initialization;
+		EList<DataProducer> dataProducers = newArray.getDataProducer();
+		if (dataProducers.size() > 0) {
+			DataProducer firstDataProducer = dataProducers.get(0);
+			if (firstDataProducer instanceof NewDataContainer) {				
+				NewDataContainer newDataContainer = (NewDataContainer) firstDataProducer;
+				DataStructure dataStructure = createDataStructureForComposition(newDataContainer.getDataContainer(), container, node);
+				generatedType = dboSchemaBuilder.createComposition(dataStructure);
+				
+				return generatedType;
+			}
+		}
+		
+		return null;
 	}
 
 	private Type processPropertyAccess(Node node, PropertyAccess propertyAccess)
@@ -434,7 +501,7 @@ public class CodeGraphBackwardIterator
 		if (dataProducer instanceof VariableAccess) {
 			VariableAccess variableAccess = (VariableAccess) dataProducer;
 			Variable variable = variableAccess.getVariable();
-			es.um.nosql.code.s13e.metamodels.code.PrimitiveType type = variableBackwardTracker.trackVariableBackwardsForType(node, variable);
+			es.um.uschema.code.metamodels.code.PrimitiveType type = variableBackwardTracker.trackVariableBackwardsForType(node, variable);
 			return TypeUtils.getType(type, dboSchemaBuilder);
 		} else if (dataProducer instanceof PropertyAccess) {
 			PropertyAccess propertyAccess = (PropertyAccess) dataProducer;
@@ -467,7 +534,7 @@ public class CodeGraphBackwardIterator
 	private Type processVariableAccess(Node node, Assignable initialization)
 	{
 		VariableAccess variableAccess = (VariableAccess) initialization;
-		es.um.nosql.code.s13e.metamodels.code.PrimitiveType primitiveType = variableBackwardTracker.trackVariableBackwardsForType(node, variableAccess.getVariable());
+		es.um.uschema.code.metamodels.code.PrimitiveType primitiveType = variableBackwardTracker.trackVariableBackwardsForType(node, variableAccess.getVariable());
 		return TypeUtils.getType(primitiveType, dboSchemaBuilder);
 	}
 	

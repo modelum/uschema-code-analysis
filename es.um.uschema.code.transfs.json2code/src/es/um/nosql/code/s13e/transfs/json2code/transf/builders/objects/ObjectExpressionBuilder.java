@@ -2,22 +2,23 @@ package es.um.nosql.code.s13e.transfs.json2code.transf.builders.objects;
 
 import java.util.List;
 
+import org.eclipse.emf.common.util.EList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import es.um.nosql.code.s13e.metamodels.code.Assignable;
-import es.um.nosql.code.s13e.metamodels.code.CodeFactory;
-import es.um.nosql.code.s13e.metamodels.code.DataContainer;
-import es.um.nosql.code.s13e.metamodels.code.Literal;
-import es.um.nosql.code.s13e.metamodels.code.NewDataContainer;
-import es.um.nosql.code.s13e.metamodels.code.Property;
-import es.um.nosql.code.s13e.metamodels.code.Statement;
 import es.um.nosql.code.s13e.transfs.json2code.transf.analyzers.JSONAnalyzer;
 import es.um.nosql.code.s13e.transfs.json2code.transf.builders.StatementBuilder;
 import es.um.nosql.code.s13e.transfs.json2code.transf.builders.location.LocationBuilder;
 import es.um.nosql.code.s13e.transfs.json2code.transf.model.repository.CodeModelRepository;
 import es.um.nosql.code.s13e.transfs.json2code.transf.utils.ListUtils;
 import es.um.nosql.code.s13e.transfs.json2code.transf.warnings.WarningRepository;
+import es.um.uschema.code.metamodels.code.Assignable;
+import es.um.uschema.code.metamodels.code.CodeFactory;
+import es.um.uschema.code.metamodels.code.DataContainer;
+import es.um.uschema.code.metamodels.code.Literal;
+import es.um.uschema.code.metamodels.code.NewDataContainer;
+import es.um.uschema.code.metamodels.code.Property;
+import es.um.uschema.code.metamodels.code.Statement;
 
 public class ObjectExpressionBuilder extends StatementBuilder
 {
@@ -105,7 +106,7 @@ public class ObjectExpressionBuilder extends StatementBuilder
 						Literal literal = (Literal) statement;
 						property.setType(literal.getType());
 					}
-				}
+				} 
 			} 
 		} else
 			warningRepository.createJSONObjectNotFoundWarning(VALUE_PROPERTY, propertyObject, this.getClass());
@@ -118,10 +119,14 @@ public class ObjectExpressionBuilder extends StatementBuilder
 		if (keyObject != null)
 		{
 			String name = keyObject.optString(NAME_PROPERTY);
-			if (name != null)
-			{
+			if (name != null && !name.equals(""))
 				return name;
-			} else
+
+			keyObject = propertyObject.optJSONObject(KEY_PROPERTY);
+			name = keyObject.optString(VALUE_PROPERTY);
+			if (name != null && !name.equals(""))
+				return name;
+			else
 				warningRepository.createJSONObjectNotFoundWarning(KEY_PROPERTY, propertyObject, this.getClass());
 		} else
 			warningRepository.createJSONObjectNotFoundWarning(KEY_PROPERTY, propertyObject, this.getClass());

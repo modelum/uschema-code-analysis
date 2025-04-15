@@ -6,22 +6,22 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.json.JSONObject;
 
-import es.um.nosql.code.s13e.metamodels.code.Assign;
-import es.um.nosql.code.s13e.metamodels.code.CodeFactory;
-import es.um.nosql.code.s13e.metamodels.code.DataContainer;
-import es.um.nosql.code.s13e.metamodels.code.DataProducer;
-import es.um.nosql.code.s13e.metamodels.code.PropertyAccess;
-import es.um.nosql.code.s13e.metamodels.code.PropertyAssign;
-import es.um.nosql.code.s13e.metamodels.code.Statement;
-import es.um.nosql.code.s13e.metamodels.code.This;
-import es.um.nosql.code.s13e.metamodels.code.Variable;
-import es.um.nosql.code.s13e.metamodels.code.VariableAccess;
 import es.um.nosql.code.s13e.transfs.json2code.transf.analyzers.JSONAnalyzer;
 import es.um.nosql.code.s13e.transfs.json2code.transf.builders.StatementBuilder;
 import es.um.nosql.code.s13e.transfs.json2code.transf.builders.location.LocationBuilder;
 import es.um.nosql.code.s13e.transfs.json2code.transf.model.repository.CodeModelRepository;
 import es.um.nosql.code.s13e.transfs.json2code.transf.utils.ListUtils;
 import es.um.nosql.code.s13e.transfs.json2code.transf.warnings.WarningRepository;
+import es.um.uschema.code.metamodels.code.Assign;
+import es.um.uschema.code.metamodels.code.CodeFactory;
+import es.um.uschema.code.metamodels.code.DataContainer;
+import es.um.uschema.code.metamodels.code.DataProducer;
+import es.um.uschema.code.metamodels.code.PropertyAccess;
+import es.um.uschema.code.metamodels.code.PropertyAssign;
+import es.um.uschema.code.metamodels.code.Statement;
+import es.um.uschema.code.metamodels.code.This;
+import es.um.uschema.code.metamodels.code.Variable;
+import es.um.uschema.code.metamodels.code.VariableAccess;
 
 public class AssignmentExpressionBuilder extends StatementBuilder
 {

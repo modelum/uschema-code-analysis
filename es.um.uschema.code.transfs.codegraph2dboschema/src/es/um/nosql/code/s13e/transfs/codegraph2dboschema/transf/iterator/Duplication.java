@@ -4,28 +4,28 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import es.um.nosql.code.s13e.metamodels.code.Argument;
-import es.um.nosql.code.s13e.metamodels.code.Call;
-import es.um.nosql.code.s13e.metamodels.code.CallableBlock;
-import es.um.nosql.code.s13e.metamodels.code.DataProducer;
-import es.um.nosql.code.s13e.metamodels.code.Parameter;
-import es.um.nosql.code.s13e.metamodels.code.PropertyAccess;
-import es.um.nosql.code.s13e.metamodels.code.Statement;
-import es.um.nosql.code.s13e.metamodels.code.Variable;
-import es.um.nosql.code.s13e.metamodels.codeGraph.Node;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Collection;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Composition;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Container;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.DataStructure;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.DatabaseOperation;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Field;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Read;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Reference;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Type;
+import es.um.uschema.code.metamodels.codeGraph.Node;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Collection;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Composition;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Container;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.DataStructure;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.DatabaseOperation;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Field;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Read;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Reference;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Type;
 import es.um.nosql.code.s13e.transfs.codegraph2dboschema.transf.builder.DBOSchemaBuilder;
 import es.um.nosql.code.s13e.transfs.codegraph2dboschema.transf.model.repository.DBOSchemaRepository;
 import es.um.nosql.code.s13e.transfs.codegraph2dboschema.transf.utils.FieldsUtils;
 import es.um.nosql.code.s13e.transfs.codegraph2dboschema.transf.utils.TypeUtils;
+import es.um.uschema.code.metamodels.code.Argument;
+import es.um.uschema.code.metamodels.code.Call;
+import es.um.uschema.code.metamodels.code.CallableBlock;
+import es.um.uschema.code.metamodels.code.DataProducer;
+import es.um.uschema.code.metamodels.code.Parameter;
+import es.um.uschema.code.metamodels.code.PropertyAccess;
+import es.um.uschema.code.metamodels.code.Statement;
+import es.um.uschema.code.metamodels.code.Variable;
 
 public class Duplication
 {
@@ -54,28 +54,29 @@ public class Duplication
 	{
 		this.newDuplicates = new LinkedList<Field>();
 		DataStructure dataStructure = firstRead.getResultDataStructure();
-		
-		if (dataStructure != null) {
+		if (dataStructure != null) {		
 			processDataStructure(dataOperationNodes, firstRead, dataStructure);
 			dataStructure.getFields().addAll(newDuplicates);
+	
+			newDuplicates.clear();
 		}
-		newDuplicates.clear();
 	}
 
 	private void processDataStructure(Map<DatabaseOperation, Node> dataOperationNodes, Read firstRead,
-			DataStructure dataStructure) {
-		for (Field field : dataStructure.getFields())
-		{
-			Type type = field.getType();
-			if (type instanceof Reference) {
-				Reference reference = (Reference) type;
-				Container targetContainer = reference.getTargetContainer();
-				
-				lookupTargetContainerInFollowingDatabaseOperations(dataOperationNodes, firstRead, targetContainer, field);
-			} else {
-				navigateCollectionsAndCompositions(dataOperationNodes, firstRead, type);
+		DataStructure dataStructure) {
+		if (dataStructure != null) {
+			for (Field field : dataStructure.getFields())
+			{
+				Type type = field.getType();
+				if (type instanceof Reference) {
+					Reference reference = (Reference) type;
+					Container targetContainer = reference.getTargetContainer();
+					
+					lookupTargetContainerInFollowingDatabaseOperations(dataOperationNodes, firstRead, targetContainer, field);
+				} else {
+					navigateCollectionsAndCompositions(dataOperationNodes, firstRead, type);
+				}
 			}
-			
 		}
 	}
 
@@ -87,10 +88,12 @@ public class Duplication
 		} else if (type instanceof Composition) {
 			Composition composition = (Composition) type;
 			DataStructure dataStructure = composition.getDataStructure();
-			processDataStructure(dataOperationNodes, firstRead, dataStructure);
-
-			dataStructure.getFields().addAll(newDuplicates);
-			newDuplicates.clear();
+			if (dataStructure != null) {
+				processDataStructure(dataOperationNodes, firstRead, dataStructure);
+	
+				dataStructure.getFields().addAll(newDuplicates);
+				newDuplicates.clear();
+			}
 		}
 	}
 
@@ -133,7 +136,7 @@ public class Duplication
 			List<Argument> arguments = call.getArguments();
 			if (arguments.size() >= 2) {
 				return lookupParameter(arguments.get(1));
-			}
+			} 
 		}
 		
 		return null;

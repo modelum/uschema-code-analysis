@@ -1,22 +1,22 @@
 package es.um.nosql.code.s13e.transfs.codegraph2dboschema.transf.builder;
 
-import es.um.nosql.code.s13e.metamodels.code.Statement;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Collection;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Composition;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Container;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.DataStructure;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.DatabaseOperationsSchema;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.DatabaseOperationsSchemaFactory;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Delete;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Field;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Insert;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.OperationParameter;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Attribute;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Read;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Reference;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Update;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Collection;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Composition;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Container;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.DataStructure;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.DatabaseOperationsSchema;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.DatabaseOperationsSchemaFactory;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Delete;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Field;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Insert;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.OperationParameter;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Attribute;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Read;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Reference;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Update;
 import es.um.nosql.code.s13e.transfs.codegraph2dboschema.transf.comparators.DataStructureComparator;
 import es.um.nosql.code.s13e.transfs.codegraph2dboschema.transf.model.repository.DBOSchemaRepository;
+import es.um.uschema.code.metamodels.code.Statement;
 
 public class DBOSchemaBuilder
 {

@@ -2,16 +2,16 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: es.um.uschema.code.metamodels.databaseOperationsSchema;singleton:=true
-Automatic-Module-Name: es.um.nosql.code.s13e.metamodels.databaseOperationsSchema
+Automatic-Module-Name: es.um.uschema.code.metamodels.databaseOperationsSchema
 Bundle-Version: 0.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.utils,
- es.um.nosql.code.s13e.metamodels.databaseOperationsSchema,
- es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.impl,
- es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.util
+Export-Package: es.um.uschema.code.metamodels.databaseOperationsSchema,
+ es.um.uschema.code.metamodels.databaseOperationsSchema.impl,
+ es.um.uschema.code.metamodels.databaseOperationsSchema.util,
+ es.um.uschema.code.metamodels.databaseOperationsSchema.utils
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  es.um.uschema.code.metamodels.code;visibility:=reexport,
  org.eclipse.core.runtime,

@@ -7,8 +7,8 @@ import java.nio.file.Files;
 
 import org.json.JSONObject;
 
-import es.um.nosql.code.s13e.metamodels.code.utils.CodeWriter;
 import es.um.nosql.code.s13e.transfs.json2code.transf.utils.uri.FileUriUtils;
+import es.um.uschema.code.metamodels.code.utils.CodeWriter;
 
 public class JsonReader2Code
 {

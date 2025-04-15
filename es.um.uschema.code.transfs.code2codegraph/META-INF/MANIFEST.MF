@@ -8,7 +8,7 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.emf.ecore.xmi
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Automatic-Module-Name: es.um.nosql.code.s13e.transfs.code2flow.transf
-Import-Package: es.um.nosql.code.s13e.metamodels.codeGraph,
- es.um.nosql.code.s13e.metamodels.codeGraph.utils,
- es.um.nosql.code.s13e.transfs.code2text.javascript.transf
+Import-Package: es.um.uschema.code.metamodels.codeGraph,
+ es.um.nosql.code.s13e.transfs.code2text.javascript.transf,
+ es.um.uschema.code.metamodels.codeGraph.utils
 Export-Package: es.um.nosql.code.s13e.transfs.code2codegraph.transf

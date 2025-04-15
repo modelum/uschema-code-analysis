@@ -5,23 +5,23 @@ import java.util.List;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.json.JSONObject;
 
-import es.um.nosql.code.s13e.metamodels.code.Assignable;
-import es.um.nosql.code.s13e.metamodels.code.CallableBlock;
-import es.um.nosql.code.s13e.metamodels.code.CodeBlock;
-import es.um.nosql.code.s13e.metamodels.code.CodeContainer;
-import es.um.nosql.code.s13e.metamodels.code.CodeFactory;
-import es.um.nosql.code.s13e.metamodels.code.DataContainer;
-import es.um.nosql.code.s13e.metamodels.code.NewClass;
-import es.um.nosql.code.s13e.metamodels.code.NewDataContainer;
-import es.um.nosql.code.s13e.metamodels.code.Statement;
-import es.um.nosql.code.s13e.metamodels.code.Variable;
-import es.um.nosql.code.s13e.metamodels.code.VariableDeclaration;
 import es.um.nosql.code.s13e.transfs.json2code.transf.analyzers.JSONAnalyzer;
 import es.um.nosql.code.s13e.transfs.json2code.transf.builders.StatementBuilder;
 import es.um.nosql.code.s13e.transfs.json2code.transf.builders.location.LocationBuilder;
 import es.um.nosql.code.s13e.transfs.json2code.transf.model.repository.CodeModelRepository;
 import es.um.nosql.code.s13e.transfs.json2code.transf.utils.ListUtils;
 import es.um.nosql.code.s13e.transfs.json2code.transf.warnings.WarningRepository;
+import es.um.uschema.code.metamodels.code.Assignable;
+import es.um.uschema.code.metamodels.code.CallableBlock;
+import es.um.uschema.code.metamodels.code.CodeBlock;
+import es.um.uschema.code.metamodels.code.CodeContainer;
+import es.um.uschema.code.metamodels.code.CodeFactory;
+import es.um.uschema.code.metamodels.code.DataContainer;
+import es.um.uschema.code.metamodels.code.NewClass;
+import es.um.uschema.code.metamodels.code.NewDataContainer;
+import es.um.uschema.code.metamodels.code.Statement;
+import es.um.uschema.code.metamodels.code.Variable;
+import es.um.uschema.code.metamodels.code.VariableDeclaration;
 
 public class VariableDeclaratorBuilder extends StatementBuilder
 {

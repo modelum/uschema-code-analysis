@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="databaseOperationsSchema" nsURI="http://es.um.nosql.code.s13e.metamodels/dboSchema"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="databaseOperationsSchema" nsURI="http://es.um.uschema.code.metamodels/dboSchema"
     nsPrefix="databaseOperationsSchema">
   <eClassifiers xsi:type="ecore:EClass" name="DatabaseOperationsSchema">
     <eStructuralFeatures xsi:type="ecore:EReference" name="databaseOperations" upperBound="-1"
@@ -14,7 +14,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="precedingDatabaseOperation"
         upperBound="-1" eType="#//DatabaseOperation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="container" eType="#//Container"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="statement" eType="ecore:EClass ../../es.um.nosql.code.s13e.metamodels.code/model/code.ecore#//Statement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statement" eType="ecore:EClass ../../es.um.uschema.code.metamodels.code/model/code.ecore#//Statement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="targetingParameter" eType="#//OperationParameter"
         containment="true"/>
   </eClassifiers>

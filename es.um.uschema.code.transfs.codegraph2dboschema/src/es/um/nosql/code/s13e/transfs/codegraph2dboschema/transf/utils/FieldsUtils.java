@@ -1,11 +1,11 @@
 package es.um.nosql.code.s13e.transfs.codegraph2dboschema.transf.utils;
 
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Collection;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Composition;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.DataStructure;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Field;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Read;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Type;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Collection;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Composition;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.DataStructure;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Field;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Read;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Type;
 
 public class FieldsUtils
 {
@@ -18,15 +18,16 @@ public class FieldsUtils
 	}
 
 	private static Field findFieldByNameInDataStructure(String name, DataStructure dataStructure) {
-		for (Field field : dataStructure.getFields()) {
-			if (field.getName().equals(name)) {
-				return field;
+		if (dataStructure != null) {
+			for (Field field : dataStructure.getFields()) {
+				if (field.getName().equals(name)) {
+					return field;
+				}
+				Field fieldFound = checkType(name, field.getType());
+				if (fieldFound != null)
+					return fieldFound;
 			}
-			Field fieldFound = checkType(name, field.getType());
-			if (fieldFound != null)
-				return fieldFound;
 		}
-		
 		return null;
 	}
 

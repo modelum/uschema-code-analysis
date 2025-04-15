@@ -1,12 +1,12 @@
 package es.um.nosql.code.s13e.transfs.codegraph2dboschema.transf.iterator;
 
-import es.um.nosql.code.s13e.metamodels.code.Argument;
-import es.um.nosql.code.s13e.metamodels.code.Call;
-import es.um.nosql.code.s13e.metamodels.code.DataProducer;
-import es.um.nosql.code.s13e.metamodels.code.Literal;
-import es.um.nosql.code.s13e.metamodels.code.PropertyAccess;
-import es.um.nosql.code.s13e.metamodels.code.VariableAccess;
-import es.um.nosql.code.s13e.metamodels.codeGraph.Node;
+import es.um.uschema.code.metamodels.codeGraph.Node;
+import es.um.uschema.code.metamodels.code.Argument;
+import es.um.uschema.code.metamodels.code.Call;
+import es.um.uschema.code.metamodels.code.DataProducer;
+import es.um.uschema.code.metamodels.code.Literal;
+import es.um.uschema.code.metamodels.code.PropertyAccess;
+import es.um.uschema.code.metamodels.code.VariableAccess;
 
 public class DataProducerTracker
 {

@@ -4,15 +4,15 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
 
-import es.um.nosql.code.s13e.metamodels.code.Argument;
-import es.um.nosql.code.s13e.metamodels.code.Call;
-import es.um.nosql.code.s13e.metamodels.code.CallableBlock;
-import es.um.nosql.code.s13e.metamodels.code.DataProducer;
-import es.um.nosql.code.s13e.metamodels.code.Parameter;
-import es.um.nosql.code.s13e.metamodels.code.Statement;
-import es.um.nosql.code.s13e.metamodels.code.Variable;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.DatabaseOperation;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Read;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.DatabaseOperation;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Read;
+import es.um.uschema.code.metamodels.code.Argument;
+import es.um.uschema.code.metamodels.code.Call;
+import es.um.uschema.code.metamodels.code.CallableBlock;
+import es.um.uschema.code.metamodels.code.DataProducer;
+import es.um.uschema.code.metamodels.code.Parameter;
+import es.um.uschema.code.metamodels.code.Statement;
+import es.um.uschema.code.metamodels.code.Variable;
 
 public class VariableTracker
 {

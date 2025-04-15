@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import es.um.nosql.code.s13e.metamodels.codeGraph.EdgeType;
-import es.um.nosql.code.s13e.metamodels.codeGraph.Node;
+import es.um.uschema.code.metamodels.codeGraph.EdgeType;
+import es.um.uschema.code.metamodels.codeGraph.Node;
 import es.um.nosql.code.s13e.transfs.code2codegraph.transf.builders.CodeGraphBuilder;
 
 public class CallHierarchy {

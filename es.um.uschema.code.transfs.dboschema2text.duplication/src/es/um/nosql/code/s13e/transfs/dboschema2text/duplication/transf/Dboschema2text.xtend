@@ -1,13 +1,13 @@
 package es.um.nosql.code.s13e.transfs.dboschema2text.duplication.transf
 
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Collection
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Composition
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Container
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.DataStructure
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Field
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Reference
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Type
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.utils.DatabaseOperationsSchemaReader
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Collection
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Composition
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Container
+import es.um.uschema.code.metamodels.databaseOperationsSchema.DataStructure
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Field
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Reference
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Type
+import es.um.uschema.code.metamodels.databaseOperationsSchema.utils.DatabaseOperationsSchemaReader
 import java.io.File
 import java.io.FileWriter
 import java.util.HashMap
@@ -133,14 +133,16 @@ class Dboschema2text
 	}
 	
 	protected def void processDataStructure(DataStructure dataStructure, HashMap<DataStructure, List<Field>> duplicatedFields) {
-		for (field : dataStructure.fields) 
-		{
-			if (field.duplicatedField !== null) 
+		if (dataStructure != null) {
+			for (field : dataStructure.fields) 
 			{
-				var sourceDataStructure = field.duplicatedField.eContainer as DataStructure
-				pushFieldToMapList(duplicatedFields, sourceDataStructure, field);
-			} 
-			checkType(field.type, duplicatedFields)
+				if (field.duplicatedField !== null) 
+				{
+					var sourceDataStructure = field.duplicatedField.eContainer as DataStructure
+					pushFieldToMapList(duplicatedFields, sourceDataStructure, field);
+				} 
+				checkType(field.type, duplicatedFields)
+			}
 		}
 	}
 	

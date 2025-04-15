@@ -4,10 +4,6 @@ import java.util.List;
 
 import org.json.JSONObject;
 
-import es.um.nosql.code.s13e.metamodels.code.CodeFactory;
-import es.um.nosql.code.s13e.metamodels.code.Literal;
-import es.um.nosql.code.s13e.metamodels.code.PrimitiveType;
-import es.um.nosql.code.s13e.metamodels.code.Statement;
 import es.um.nosql.code.s13e.transfs.json2code.transf.analyzers.JSONAnalyzer;
 import es.um.nosql.code.s13e.transfs.json2code.transf.builders.StatementBuilder;
 import es.um.nosql.code.s13e.transfs.json2code.transf.builders.location.LocationBuilder;
@@ -15,6 +11,10 @@ import es.um.nosql.code.s13e.transfs.json2code.transf.model.repository.CodeModel
 import es.um.nosql.code.s13e.transfs.json2code.transf.model.repository.TypesRepository;
 import es.um.nosql.code.s13e.transfs.json2code.transf.utils.ListUtils;
 import es.um.nosql.code.s13e.transfs.json2code.transf.warnings.WarningRepository;
+import es.um.uschema.code.metamodels.code.CodeFactory;
+import es.um.uschema.code.metamodels.code.Literal;
+import es.um.uschema.code.metamodels.code.PrimitiveType;
+import es.um.uschema.code.metamodels.code.Statement;
 
 public class LiteralBuilder extends StatementBuilder
 {

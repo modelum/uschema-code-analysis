@@ -1,21 +1,21 @@
 package es.um.nosql.code.s13e.transfs.code2codegraph.transf.builders;
 
-import es.um.nosql.code.s13e.metamodels.code.CallableBlock;
-import es.um.nosql.code.s13e.metamodels.code.Code;
-import es.um.nosql.code.s13e.metamodels.code.CodeBlock;
-import es.um.nosql.code.s13e.metamodels.code.Parameter;
-import es.um.nosql.code.s13e.metamodels.code.Statement;
-import es.um.nosql.code.s13e.metamodels.code.Variable;
-import es.um.nosql.code.s13e.metamodels.codeGraph.CodeGraph;
-import es.um.nosql.code.s13e.metamodels.codeGraph.CallableBlockSubGraph;
-import es.um.nosql.code.s13e.metamodels.codeGraph.CodeBlockSubGraph;
-import es.um.nosql.code.s13e.metamodels.codeGraph.CodeGraphFactory;
-import es.um.nosql.code.s13e.metamodels.codeGraph.CodeSubGraph;
-import es.um.nosql.code.s13e.metamodels.codeGraph.Edge;
-import es.um.nosql.code.s13e.metamodels.codeGraph.EdgeType;
-import es.um.nosql.code.s13e.metamodels.codeGraph.Node;
-import es.um.nosql.code.s13e.metamodels.codeGraph.NodeType;
+import es.um.uschema.code.metamodels.codeGraph.CodeGraph;
+import es.um.uschema.code.metamodels.codeGraph.CallableBlockSubGraph;
+import es.um.uschema.code.metamodels.codeGraph.CodeBlockSubGraph;
+import es.um.uschema.code.metamodels.codeGraph.CodeGraphFactory;
+import es.um.uschema.code.metamodels.codeGraph.CodeSubGraph;
+import es.um.uschema.code.metamodels.codeGraph.Edge;
+import es.um.uschema.code.metamodels.codeGraph.EdgeType;
+import es.um.uschema.code.metamodels.codeGraph.Node;
+import es.um.uschema.code.metamodels.codeGraph.NodeType;
 import es.um.nosql.code.s13e.transfs.code2codegraph.transf.model.repository.CodeGraphModelRepository;
+import es.um.uschema.code.metamodels.code.CallableBlock;
+import es.um.uschema.code.metamodels.code.Code;
+import es.um.uschema.code.metamodels.code.CodeBlock;
+import es.um.uschema.code.metamodels.code.Parameter;
+import es.um.uschema.code.metamodels.code.Statement;
+import es.um.uschema.code.metamodels.code.Variable;
 
 public class CodeGraphBuilder 
 {
@@ -40,12 +40,12 @@ public class CodeGraphBuilder
 
 	public CallableBlockSubGraph createCallableBlockSubGraph(CallableBlock callableBlock) 
 	{
-		CallableBlockSubGraph CallableBlockSubGraph = codeGraphFactory.createCallableBlockSubGraph();
-		CallableBlockSubGraph.setCallableBlock(callableBlock);
+		CallableBlockSubGraph callableBlockSubGraph = codeGraphFactory.createCallableBlockSubGraph();
+		callableBlockSubGraph.setCallableBlock(callableBlock);
 		
-		codeGraphModelRepository.saveCallableBlockSubGraph(CallableBlockSubGraph);
+		callableBlockSubGraph = codeGraphModelRepository.saveCallableBlockSubGraph(callableBlockSubGraph);
 		
-		return CallableBlockSubGraph;
+		return callableBlockSubGraph;
 	}
 
 	public CodeBlockSubGraph createCodeBlockSubGraph(CodeBlock codeBlock) 

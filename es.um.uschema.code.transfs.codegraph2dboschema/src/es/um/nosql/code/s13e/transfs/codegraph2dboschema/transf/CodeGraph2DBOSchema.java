@@ -1,31 +1,24 @@
 package es.um.nosql.code.s13e.transfs.codegraph2dboschema.transf;
 
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
 
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-
-import es.um.nosql.code.s13e.metamodels.code.Call;
-import es.um.nosql.code.s13e.metamodels.code.Code;
-import es.um.nosql.code.s13e.metamodels.codeGraph.CodeGraph;
-import es.um.nosql.code.s13e.metamodels.codeGraph.Node;
-import es.um.nosql.code.s13e.metamodels.codeGraph.utils.CodeGraphReader;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Container;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.DataStructure;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.DatabaseOperation;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.DatabaseOperationsSchema;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Field;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Read;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.utils.DatabaseOperationsSchemaWriter;
 import es.um.nosql.code.s13e.transfs.codegraph2dboschema.transf.builder.DBOSchemaBuilder;
 import es.um.nosql.code.s13e.transfs.codegraph2dboschema.transf.iterator.CodeGraphBackwardIterator;
 import es.um.nosql.code.s13e.transfs.codegraph2dboschema.transf.iterator.CodeGraphForwardIterator;
 import es.um.nosql.code.s13e.transfs.codegraph2dboschema.transf.iterator.Duplication;
 import es.um.nosql.code.s13e.transfs.codegraph2dboschema.transf.model.repository.DBOSchemaRepository;
+import es.um.uschema.code.metamodels.code.Call;
+import es.um.uschema.code.metamodels.code.Code;
+import es.um.uschema.code.metamodels.codeGraph.CodeGraph;
+import es.um.uschema.code.metamodels.codeGraph.Node;
+import es.um.uschema.code.metamodels.codeGraph.utils.CodeGraphReader;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Container;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.DataStructure;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.DatabaseOperation;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.DatabaseOperationsSchema;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Field;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.utils.DatabaseOperationsSchemaWriter;
 
 public class CodeGraph2DBOSchema
 {
@@ -76,7 +69,21 @@ public class CodeGraph2DBOSchema
 			duplicactionTracker.duplicatePossibles(dataOperationNodes, don.getKey(), don.getValue());
 		});
 		
+		refreshFeilds(databaseOperationsSchema);
+
 		return databaseOperationsSchema;
+	}
+
+	private void refreshFeilds(DatabaseOperationsSchema databaseOperationsSchema) {
+		for (Container container : databaseOperationsSchema.getContainers()) {
+		    for (DataStructure dataStructure : container.getDataStructures()) {
+		        for (Field field : dataStructure.getFields()) {
+		        	if (field.getType() == null)
+		        		field.setType(dboSchemaBuilder.createPrimitiveType("String"));
+		            
+		        }
+		    }
+		}
 	}
 
 }

@@ -3,15 +3,15 @@ package es.um.nosql.code.s13e.transfs.codegraph2dboschema.transf.iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-import es.um.nosql.code.s13e.metamodels.code.Assignable;
-import es.um.nosql.code.s13e.metamodels.code.Call;
-import es.um.nosql.code.s13e.metamodels.code.Literal;
-import es.um.nosql.code.s13e.metamodels.code.NewArray;
-import es.um.nosql.code.s13e.metamodels.code.PrimitiveType;
-import es.um.nosql.code.s13e.metamodels.code.Statement;
-import es.um.nosql.code.s13e.metamodels.code.Variable;
-import es.um.nosql.code.s13e.metamodels.code.VariableDeclaration;
-import es.um.nosql.code.s13e.metamodels.codeGraph.Node;
+import es.um.uschema.code.metamodels.codeGraph.Node;
+import es.um.uschema.code.metamodels.code.Assignable;
+import es.um.uschema.code.metamodels.code.Call;
+import es.um.uschema.code.metamodels.code.Literal;
+import es.um.uschema.code.metamodels.code.NewArray;
+import es.um.uschema.code.metamodels.code.PrimitiveType;
+import es.um.uschema.code.metamodels.code.Statement;
+import es.um.uschema.code.metamodels.code.Variable;
+import es.um.uschema.code.metamodels.code.VariableDeclaration;
 
 public class VariableBackwardTracker extends BackwardTracker
 {

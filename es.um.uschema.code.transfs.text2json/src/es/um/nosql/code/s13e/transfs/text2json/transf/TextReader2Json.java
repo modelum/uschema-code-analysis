@@ -24,9 +24,10 @@ public class TextReader2Json {
 	private void textCodeFile2json(File file, String outputUri) throws IOException {
 		if (file.isDirectory()) {
 			for (File newFile : file.listFiles()) {
-				textCodeFile2json(newFile, file.getName() + "/" + outputUri);
+				textCodeFile2json(newFile, outputUri + "/" + file.getName() + "/");
 			}
 		} else if (file.isFile()) {
+			System.out.println("\tParsing File: " + file);
 			String code = new String(Files.readAllBytes(file.toPath()), StandardCharsets.UTF_8);
 			String json = new Text2Json().textCode2json(code);
 			printToFile(outputUri + FileUriUtils.replaceExtension(file.getName(), ".json"), json);

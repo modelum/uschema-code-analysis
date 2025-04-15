@@ -1,16 +1,16 @@
 package es.um.nosql.code.s13e.transfs.json2code.transf.builders;
 
-import es.um.nosql.code.s13e.metamodels.code.CallableBlock;
-import es.um.nosql.code.s13e.metamodels.code.Code;
-import es.um.nosql.code.s13e.metamodels.code.CodeBlock;
-import es.um.nosql.code.s13e.metamodels.code.CodeBlockType;
-import es.um.nosql.code.s13e.metamodels.code.CodeContainer;
-import es.um.nosql.code.s13e.metamodels.code.CodeContainerType;
-import es.um.nosql.code.s13e.metamodels.code.CodeFactory;
-import es.um.nosql.code.s13e.metamodels.code.Container;
-import es.um.nosql.code.s13e.metamodels.code.ContainerType;
-import es.um.nosql.code.s13e.metamodels.code.DataContainer;
 import es.um.nosql.code.s13e.transfs.json2code.transf.model.repository.CodeModelRepository;
+import es.um.uschema.code.metamodels.code.CallableBlock;
+import es.um.uschema.code.metamodels.code.Code;
+import es.um.uschema.code.metamodels.code.CodeBlock;
+import es.um.uschema.code.metamodels.code.CodeBlockType;
+import es.um.uschema.code.metamodels.code.CodeContainer;
+import es.um.uschema.code.metamodels.code.CodeContainerType;
+import es.um.uschema.code.metamodels.code.CodeFactory;
+import es.um.uschema.code.metamodels.code.Container;
+import es.um.uschema.code.metamodels.code.ContainerType;
+import es.um.uschema.code.metamodels.code.DataContainer;
 
 public class ContainersBuilder {
 	

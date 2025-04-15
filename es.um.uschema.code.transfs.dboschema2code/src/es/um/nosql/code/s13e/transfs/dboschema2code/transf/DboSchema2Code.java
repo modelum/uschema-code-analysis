@@ -2,23 +2,23 @@ package es.um.nosql.code.s13e.transfs.dboschema2code.transf;
 
 import java.util.Optional;
 
-import es.um.nosql.code.s13e.metamodels.code.Call;
-import es.um.nosql.code.s13e.metamodels.code.Code;
-import es.um.nosql.code.s13e.metamodels.code.utils.CodeWriter;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Collection;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Composition;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Container;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.DataStructure;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.DatabaseOperation;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.DatabaseOperationsSchema;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Field;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Read;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Reference;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Type;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.utils.DatabaseOperationsSchemaReader;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Collection;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Composition;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Container;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.DataStructure;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.DatabaseOperation;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.DatabaseOperationsSchema;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Field;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Read;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Reference;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Type;
 import es.um.nosql.code.s13e.transfs.code2text.javascript.transf.Code2Text;
 import es.um.nosql.code.s13e.transfs.dboschema2code.transf.rewritters.AggregateRewritter;
 import es.um.nosql.code.s13e.transfs.dboschema2code.transf.rewritters.FindRewritter;
+import es.um.uschema.code.metamodels.code.Call;
+import es.um.uschema.code.metamodels.code.Code;
+import es.um.uschema.code.metamodels.code.utils.CodeWriter;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.utils.DatabaseOperationsSchemaReader;
 
 public class DboSchema2Code
 {
@@ -79,13 +79,15 @@ public class DboSchema2Code
 	}
 	
 	private Field findReferenceInDataStructure(DataStructure dataStructure) {
-		for (Field field : dataStructure.getFields()) {
-			if (field.getType() instanceof Reference) {
-				return field;
+		if (dataStructure != null) {
+			for (Field field : dataStructure.getFields()) {
+				if (field.getType() instanceof Reference) {
+					return field;
+				}
+				Field fieldFound = findReference(field.getType());
+				if (fieldFound != null)
+					return fieldFound;
 			}
-			Field fieldFound = findReference(field.getType());
-			if (fieldFound != null)
-				return fieldFound;
 		}
 		
 		return null;

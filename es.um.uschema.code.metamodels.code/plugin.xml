@@ -9,8 +9,8 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated code -->
       <package
-            uri="http://es.um.nosql.code.s13e.metamodels/code"
-            class="es.um.nosql.code.s13e.metamodels.code.CodePackage"
+            uri="http://es.um.uschema.code.metamodels/code"
+            class="es.um.uschema.code.metamodels.code.CodePackage"
             genModel="model/code.genmodel"/>
    </extension>
 

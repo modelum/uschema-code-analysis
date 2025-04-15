@@ -2,14 +2,14 @@ package es.um.nosql.code.s13e.transfs.codegraph2neo4j.transf;
 
 import java.util.List;
 
-import es.um.nosql.code.s13e.metamodels.code.Statement;
-import es.um.nosql.code.s13e.metamodels.codeGraph.CodeGraph;
-import es.um.nosql.code.s13e.metamodels.codeGraph.CodeSubGraph;
-import es.um.nosql.code.s13e.metamodels.codeGraph.Node;
+import es.um.uschema.code.metamodels.codeGraph.CodeGraph;
+import es.um.uschema.code.metamodels.codeGraph.CodeSubGraph;
+import es.um.uschema.code.metamodels.codeGraph.Node;
 import es.um.nosql.code.s13e.transfs.code2text.javascript.transf.statements.StatementsPrinter;
 import es.um.unosql.neo4j.api.write.domain.Neo4jNode;
 import es.um.unosql.neo4j.api.write.domain.Neo4jRelationship;
 import es.um.unosql.neo4j.api.write.domain.Neo4jStore;
+import es.um.uschema.code.metamodels.code.Statement;
 
 public class CodeGraphProcessor
 {

@@ -1,22 +1,22 @@
 package es.um.nosql.code.s13e.transfs.codegraph2dboschema.transf.utils;
 
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Composition;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.DataStructure;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Field;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Attribute;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Collection;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Reference;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Type;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Composition;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.DataStructure;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Field;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Attribute;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Collection;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Reference;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Type;
 import es.um.nosql.code.s13e.transfs.codegraph2dboschema.transf.builder.DBOSchemaBuilder;
 
 public class TypeUtils
 {
-	public static Type getType(es.um.nosql.code.s13e.metamodels.code.Type type, DBOSchemaBuilder dboSchemaBuilder)
+	public static Type getType(es.um.uschema.code.metamodels.code.Type type, DBOSchemaBuilder dboSchemaBuilder)
 	{
-		if (type instanceof es.um.nosql.code.s13e.metamodels.code.PrimitiveType)
+		if (type instanceof es.um.uschema.code.metamodels.code.PrimitiveType)
 		{
-			es.um.nosql.code.s13e.metamodels.code.PrimitiveType codePrimitiveType = 
-					(es.um.nosql.code.s13e.metamodels.code.PrimitiveType) type;
+			es.um.uschema.code.metamodels.code.PrimitiveType codePrimitiveType = 
+					(es.um.uschema.code.metamodels.code.PrimitiveType) type;
 			
 			Attribute primitiveType = dboSchemaBuilder.createPrimitiveType(codePrimitiveType.getType());
 			

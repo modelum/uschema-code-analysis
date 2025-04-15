@@ -2,11 +2,11 @@ package es.um.nosql.code.s13e.transfs.dboschema2unosqlschema.transf.builder;
 
 import org.eclipse.emf.common.util.EList;
 
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Attribute;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Collection;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Composition;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.DataStructure;
-import es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Type;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Attribute;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Collection;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Composition;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.DataStructure;
+import es.um.uschema.code.metamodels.databaseOperationsSchema.Type;
 
 import es.um.nosql.code.s13e.transfs.dboschema2unosqlschema.transf.repositories.NoSQLSchemaRepository;
 
@@ -20,6 +20,7 @@ import es.um.uschema.USchema.PrimitiveType;
 import es.um.uschema.USchema.Reference;
 import es.um.uschema.USchema.StructuralVariation;
 import es.um.uschema.USchema.USchemaFactory;
+import es.um.uschema.utils.compare.CompareStructuralVariation;
 
 public class NoSQLSchemaBuilder
 {
@@ -94,21 +95,21 @@ public class NoSQLSchemaBuilder
 	{
 		Feature property = null;
 		
-		if (type instanceof es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Attribute) {
+		if (type instanceof es.um.uschema.code.metamodels.databaseOperationsSchema.Attribute) {
 			property = createAttribute(name, createDataType(type));
-		} else if (type instanceof es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Collection) {
+		} else if (type instanceof es.um.uschema.code.metamodels.databaseOperationsSchema.Collection) {
 			Collection collection = (Collection) type;
 			EList<Type> types = collection.getTypes();
 			if (types.size() > 0) {
 				Type collectionType = types.get(0);
 				if (collectionType instanceof Composition) {
 					Aggregate aggregate = createAggregate(name, collectionType, structuralVariation);
-					aggregate.setUpperBound(-1);
 					aggregate.setLowerBound(0);
+					aggregate.setUpperBound(-1);
 					
 					structuralVariation.getFeatures().add(aggregate);
-				} else if (collectionType instanceof es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Reference) {
-					es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Reference dosReference = (es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Reference) collectionType;
+				} else if (collectionType instanceof es.um.uschema.code.metamodels.databaseOperationsSchema.Reference) {
+					es.um.uschema.code.metamodels.databaseOperationsSchema.Reference dosReference = (es.um.uschema.code.metamodels.databaseOperationsSchema.Reference) collectionType;
 					
 					Reference reference = createReference("", dosReference);
 					
@@ -131,7 +132,7 @@ public class NoSQLSchemaBuilder
 						attribute = createAttribute(name, dataType);
 						
 						reference.setLowerBound(0);
-						reference.setUpperBound(1);
+						reference.setUpperBound(-1);
 					}
 
 					reference.getAttributes().add(attribute);
@@ -142,8 +143,8 @@ public class NoSQLSchemaBuilder
 				}
 			}
 			
-		} else if (type instanceof es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Reference) {
-			es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Reference dosReference = (es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Reference) type;
+		} else if (type instanceof es.um.uschema.code.metamodels.databaseOperationsSchema.Reference) {
+			es.um.uschema.code.metamodels.databaseOperationsSchema.Reference dosReference = (es.um.uschema.code.metamodels.databaseOperationsSchema.Reference) type;
 			
 			Reference reference = createReference(name, dosReference);
 			property = reference;
@@ -187,7 +188,7 @@ public class NoSQLSchemaBuilder
 		return attribute;
 	}
 
-	private Reference createReference(String name, es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Reference reference)
+	private Reference createReference(String name, es.um.uschema.code.metamodels.databaseOperationsSchema.Reference reference)
 	{
 		Reference noSqlSchemaReference = noSQLSchemaFactory.createReference();
 		String targetContainerName = reference.getTargetContainer().getName();
@@ -197,8 +198,8 @@ public class NoSQLSchemaBuilder
 		}
 		
 		noSqlSchemaReference.setRefsTo(entityType);
-		noSqlSchemaReference.setLowerBound(1);
-		noSqlSchemaReference.setUpperBound(1);
+		noSqlSchemaReference.setLowerBound(0);
+		noSqlSchemaReference.setUpperBound(-1);
 		
 		return noSqlSchemaReference;
 	}
@@ -219,20 +220,30 @@ public class NoSQLSchemaBuilder
 			DataStructure dataStructure)
 	{
 		StructuralVariation innerStructuralVariation = createStructuralVariation();
-		EntityType entityType = createEntityTypeAndSave(name, false);
-		entityType.getVariations().add(innerStructuralVariation);
-		dataStructure.getFields().forEach(f -> {
-			if (f.getDuplicatedField() == null)
-				createPropertyAndSave(f.getName(), f.getType(), innerStructuralVariation);
-		});
-		
+		if (dataStructure != null) {
+			EntityType entityType = createEntityTypeAndSave(name, false);
+			dataStructure.getFields().forEach(f -> {
+				if (f.getDuplicatedField() == null)
+					createPropertyAndSave(f.getName(), f.getType(), innerStructuralVariation);
+			});
+						
+			boolean existing = false;
+			CompareStructuralVariation compareStructuralVariation = new CompareStructuralVariation();
+			for (StructuralVariation sv : entityType.getVariations()) {
+				if (compareStructuralVariation.compare(sv, innerStructuralVariation))
+					existing = true;
+			}
+
+			if (!existing)
+				entityType.getVariations().add(innerStructuralVariation);
+		}
 		return structuralVariation;
 	}
 
 	private DataType createDataType(Type type)
 	{
-		if (type instanceof es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Attribute) {
-			es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Attribute dboSchemaPrimitiveType = (es.um.nosql.code.s13e.metamodels.databaseOperationsSchema.Attribute) type;
+		if (type instanceof es.um.uschema.code.metamodels.databaseOperationsSchema.Attribute) {
+			es.um.uschema.code.metamodels.databaseOperationsSchema.Attribute dboSchemaPrimitiveType = (es.um.uschema.code.metamodels.databaseOperationsSchema.Attribute) type;
 			
 			PrimitiveType noSQLSchemaPrimitiveType = noSQLSchemaFactory.createPrimitiveType();
 			noSQLSchemaPrimitiveType.setName(dboSchemaPrimitiveType.getName());

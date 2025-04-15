@@ -7,13 +7,13 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: es.um.nosql.code.s13e.metamodels.codeGraph,
- es.um.nosql.code.s13e.metamodels.codeGraph.impl,
- es.um.nosql.code.s13e.metamodels.codeGraph.util,
- es.um.nosql.code.s13e.metamodels.codeGraph.utils
+Export-Package: es.um.uschema.code.metamodels.codeGraph.utils,
+ es.um.uschema.code.metamodels.codeGraph,
+ es.um.uschema.code.metamodels.codeGraph.impl,
+ es.um.uschema.code.metamodels.codeGraph.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  es.um.uschema.code.metamodels.code;bundle-version="0.1.0";visibility:=reexport,
  org.eclipse.emf.ecore.xmi
 Bundle-ActivationPolicy: lazy
-Automatic-Module-Name: es.um.nosql.code.s13e.metamodels.codeGraph
+Automatic-Module-Name: es.um.uschema.code.metamodels.codeGraph

@@ -25,8 +25,6 @@ public class Text2Json {
     	    ScriptEngine engine = factory.getEngineByName("nashorn"); 
         	String baseDirLocation = getClassParentLocation();
         	
-        	System.out.println(baseDirLocation + "/" + PARSING_SCRIPT_JS_URI);
-        	
 			engine.eval(new FileReader(baseDirLocation + "/" + PARSING_SCRIPT_JS_URI));
 			Invocable invocable = (Invocable) engine;
 			String result = (String) invocable.invokeFunction(PARSING_METHOD_NAME, baseDirLocation + "/" + ESPRIMA_JS_URI, code);

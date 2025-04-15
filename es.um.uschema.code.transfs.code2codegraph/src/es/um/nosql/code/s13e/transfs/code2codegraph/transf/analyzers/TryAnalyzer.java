@@ -2,16 +2,16 @@ package es.um.nosql.code.s13e.transfs.code2codegraph.transf.analyzers;
 
 import org.eclipse.emf.common.util.EList;
 
-import es.um.nosql.code.s13e.metamodels.code.Catch;
-import es.um.nosql.code.s13e.metamodels.code.Finally;
-import es.um.nosql.code.s13e.metamodels.code.Statement;
-import es.um.nosql.code.s13e.metamodels.code.Try;
-import es.um.nosql.code.s13e.metamodels.codeGraph.CodeSubGraph;
-import es.um.nosql.code.s13e.metamodels.codeGraph.EdgeType;
-import es.um.nosql.code.s13e.metamodels.codeGraph.Node;
-import es.um.nosql.code.s13e.metamodels.codeGraph.NodeType;
+import es.um.uschema.code.metamodels.codeGraph.CodeSubGraph;
+import es.um.uschema.code.metamodels.codeGraph.EdgeType;
+import es.um.uschema.code.metamodels.codeGraph.Node;
+import es.um.uschema.code.metamodels.codeGraph.NodeType;
 import es.um.nosql.code.s13e.transfs.code2codegraph.transf.builders.CodeGraphBuilder;
 import es.um.nosql.code.s13e.transfs.code2codegraph.transf.iterators.CodeIterator;
+import es.um.uschema.code.metamodels.code.Catch;
+import es.um.uschema.code.metamodels.code.Finally;
+import es.um.uschema.code.metamodels.code.Statement;
+import es.um.uschema.code.metamodels.code.Try;
 
 public class TryAnalyzer
 {

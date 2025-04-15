@@ -1,16 +1,16 @@
 package es.um.nosql.code.s13e.transfs.code2text.javascript.transf.containers
 
-import es.um.nosql.code.s13e.metamodels.code.CallableBlock
-import es.um.nosql.code.s13e.metamodels.code.CodeBlock
-import es.um.nosql.code.s13e.metamodels.code.CodeBlockType
-import es.um.nosql.code.s13e.metamodels.code.CodeContainer
-import es.um.nosql.code.s13e.metamodels.code.Container
-import es.um.nosql.code.s13e.metamodels.code.ContainerType
+import es.um.uschema.code.metamodels.code.CallableBlock
+import es.um.uschema.code.metamodels.code.CodeBlock
+import es.um.uschema.code.metamodels.code.CodeBlockType
+import es.um.uschema.code.metamodels.code.CodeContainer
+import es.um.uschema.code.metamodels.code.Container
+import es.um.uschema.code.metamodels.code.ContainerType
 import es.um.nosql.code.s13e.transfs.code2text.javascript.transf.statements.StatementsPrinter
 import java.io.File
 import java.io.FileWriter
 import java.util.List
-import es.um.nosql.code.s13e.metamodels.code.CodeContainerType
+import es.um.uschema.code.metamodels.code.CodeContainerType
 
 class CodeContainerPrinter {
 	
@@ -53,9 +53,9 @@ class CodeContainerPrinter {
 		{
 			result += 
 				'''
-				class «codeContainer.name»
+				class Â«codeContainer.nameÂ»
 				{
-					«generateMethods(statementsPrinter, codeContainer)»
+					Â«generateMethods(statementsPrinter, codeContainer)Â»
 				}
 				'''
 		}
@@ -90,9 +90,9 @@ class CodeContainerPrinter {
 			{
 				result +=
 				'''
-				«callableBlock.name»(«FOR p : callableBlock.parameters SEPARATOR ', '»«p.name»«ENDFOR»)
+				Â«callableBlock.nameÂ»(Â«FOR p : callableBlock.parameters SEPARATOR ', 'Â»Â«p.nameÂ»Â«ENDFORÂ»)
 				{
-					«statementsPrinter.generateStatements(callableBlock.statements)»
+					Â«statementsPrinter.generateStatements(callableBlock.statements)Â»
 				}
 				'''
 			}
@@ -106,9 +106,9 @@ class CodeContainerPrinter {
 		{
 			return
 			'''
-			function «codeBlock.name»(«FOR p : codeBlock.parameters SEPARATOR ', '»«p.name»«ENDFOR»)
+			function Â«codeBlock.nameÂ»(Â«FOR p : codeBlock.parameters SEPARATOR ', 'Â»Â«p.nameÂ»Â«ENDFORÂ»)
 			{
-				«statementsPrinter.generateStatements(codeBlock)»
+				Â«statementsPrinter.generateStatements(codeBlock)Â»
 			}
 			'''
 		}

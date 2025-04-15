@@ -1,10 +1,10 @@
 package es.um.nosql.code.s13e.transfs.codegraph2dboschema.transf.iterator;
 
-import es.um.nosql.code.s13e.metamodels.code.Variable;
-import es.um.nosql.code.s13e.metamodels.codeGraph.Edge;
-import es.um.nosql.code.s13e.metamodels.codeGraph.EdgeType;
-import es.um.nosql.code.s13e.metamodels.codeGraph.Node;
-import es.um.nosql.code.s13e.metamodels.codeGraph.NodeType;
+import es.um.uschema.code.metamodels.codeGraph.Edge;
+import es.um.uschema.code.metamodels.codeGraph.EdgeType;
+import es.um.uschema.code.metamodels.codeGraph.Node;
+import es.um.uschema.code.metamodels.codeGraph.NodeType;
+import es.um.uschema.code.metamodels.code.Variable;
 
 public abstract class ForwardTracker
 {

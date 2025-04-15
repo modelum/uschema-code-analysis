@@ -9,8 +9,8 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated codeGraph -->
       <package
-            uri="http://es.um.nosql.code.s13e.metamodels/codeGraph"
-            class="es.um.nosql.code.s13e.metamodels.codeGraph.CodeGraphPackage"
+            uri="http://es.um.uschema.code.metamodels/codeGraph"
+            class="es.um.uschema.code.metamodels.codeGraph.CodeGraphPackage"
             genModel="model/codeGraph.genmodel"/>
    </extension>
 

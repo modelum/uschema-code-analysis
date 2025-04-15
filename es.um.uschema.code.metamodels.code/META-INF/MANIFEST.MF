@@ -7,12 +7,12 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: es.um.nosql.code.s13e.metamodels.code,
- es.um.nosql.code.s13e.metamodels.code.impl,
- es.um.nosql.code.s13e.metamodels.code.util,
- es.um.nosql.code.s13e.metamodels.code.utils
+Export-Package: es.um.uschema.code.metamodels.code,
+ es.um.uschema.code.metamodels.code.impl,
+ es.um.uschema.code.metamodels.code.util,
+ es.um.uschema.code.metamodels.code.utils
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy
-Automatic-Module-Name: es.um.nosql.code.s13e.metamodels.code
+Automatic-Module-Name: es.um.uschema.code.metamodels.code
 Import-Package: org.eclipse.emf.ecore.xmi.impl

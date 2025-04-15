@@ -12,7 +12,7 @@ public class ConstantsDBSchema
 	public static final String INSERT = "insert";
 	public static final String DELETE_ONE = "deleteOne";
 	public static final String DELETE = "delete";
-	public static final String UPDATE_ONE = "updateOne";
+	public static final String FIND_ONE_UPDATE_ONE = "findOneAndUpdate";
 	public static final String UPDATE = "update";
 	public static final String AGGREGATE = "aggregate";
 	
@@ -20,7 +20,7 @@ public class ConstantsDBSchema
 			FIND_ONE, FIND,
 			INSERT_ONE, INSERT,
 			DELETE_ONE, DELETE,
-			UPDATE_ONE, UPDATE,
+			FIND_ONE_UPDATE_ONE, UPDATE,
 			AGGREGATE
 		).collect(Collectors.toList());
 	

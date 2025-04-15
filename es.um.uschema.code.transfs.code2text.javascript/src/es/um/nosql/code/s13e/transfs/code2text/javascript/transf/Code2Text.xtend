@@ -1,9 +1,9 @@
 package es.um.nosql.code.s13e.transfs.code2text.javascript.transf
 
-import es.um.nosql.code.s13e.metamodels.code.Code
+import es.um.uschema.code.metamodels.code.Code
 import es.um.nosql.code.s13e.transfs.code2text.javascript.transf.containers.CodeContainerPrinter
 import java.io.File
-import es.um.nosql.code.s13e.metamodels.code.utils.CodeReader
+import es.um.uschema.code.metamodels.code.utils.CodeReader
 
 class Code2Text {
 	

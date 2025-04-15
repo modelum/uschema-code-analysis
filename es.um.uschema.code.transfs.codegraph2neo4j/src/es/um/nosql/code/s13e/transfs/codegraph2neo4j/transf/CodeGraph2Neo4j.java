@@ -4,9 +4,9 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import es.um.nosql.code.s13e.metamodels.codeGraph.CodeGraph;
-import es.um.nosql.code.s13e.metamodels.codeGraph.utils.CodeGraphReader;
+import es.um.uschema.code.metamodels.codeGraph.CodeGraph;
 import es.um.unosql.neo4j.api.write.database.connection.Neo4jDatabase;
+import es.um.uschema.code.metamodels.codeGraph.utils.CodeGraphReader;
 
 public class CodeGraph2Neo4j {
 

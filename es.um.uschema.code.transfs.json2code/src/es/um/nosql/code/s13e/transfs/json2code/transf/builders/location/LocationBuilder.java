@@ -2,9 +2,9 @@ package es.um.nosql.code.s13e.transfs.json2code.transf.builders.location;
 
 import org.json.JSONObject;
 
-import es.um.nosql.code.s13e.metamodels.code.CodeFactory;
-import es.um.nosql.code.s13e.metamodels.code.CodeLocation;
-import es.um.nosql.code.s13e.metamodels.code.Statement;
+import es.um.uschema.code.metamodels.code.CodeFactory;
+import es.um.uschema.code.metamodels.code.CodeLocation;
+import es.um.uschema.code.metamodels.code.Statement;
 
 public class LocationBuilder
 {
