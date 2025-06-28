@@ -38,5 +38,5 @@ $ git clone https://github.com/modelum/uschema
 
 List of related publications:
 
-* Carlos J. Fernández-Candel, Anthony Cleve, Jesús García-Molina, [**Automated Extraction and Refactoring of NoSQL Schemas from Application Code**](#). arXiv. 
+* Carlos J. Fernández-Candel, Anthony Cleve, Jesús García-Molina, [**Automated Extraction and Refactoring of NoSQL Schemas from Application Code**](https://arxiv.org/abs/2505.20230). arXiv. 
 — The APP used to validate the approach (music-app) in the paper can be found in "es.um.uschema.code.transfs.launcher" under the folder "inputs".
