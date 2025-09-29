@@ -23,6 +23,53 @@ The approach is designed to support schema discovery in schemaless NoSQL databas
 - Automated schema, data, and code updates.
 - Graph visualization for control flow analysis using Neo4j.
 
+# U-Schema Code Transformations Prototype
+
+This repository contains the prototype implementation described in the paper.  
+It provides tools for analyzing application code, extracting schemas, and applying refactorings.
+
+## Requirements
+
+- Java 11+
+- Maven 3+
+- Eclipse Modeling distribution (including EMF libraries)
+
+## Running the Project
+
+To execute the prototype and reproduce the results described in the paper, please follow these steps:
+
+1. **Clone and build the project**  
+   Make sure all submodules are properly initialized and run:  
+   ```bash
+   mvn install
+   ```  
+   This will download and configure all required dependencies.
+
+2. **Open in Eclipse Modeling**  
+   Import the project into an Eclipse installation with the **Modeling distribution**, which includes the EMF libraries.
+
+3. **Locate the launcher project**  
+   Open the project:  
+   ```
+   es.um.uschema.code.transfs.launcher
+   ```
+
+4. **Run the main class**  
+   Execute the class:  
+   ```
+   Launcher.java
+   ```  
+   This will automatically generate an `outputs/` folder containing all inferred models and the corresponding generated code.
+
+5. **Input application**  
+   The example application used in the paper is provided in the `inputs/` folder.  
+   You can replace this with other projects if desired.
+
+## License
+
+This project is distributed for academic and research purposes.
+
+
 ## Dependencies
 
 This project relies on the following tools and libraries:
